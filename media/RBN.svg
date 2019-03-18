@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="50.661858mm"
+   height="70.586746mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="RBN.svg"
+   viewBox="0 0 179.51052 250.11051">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="494.98894"
+     inkscape:cy="209.35331"
+     inkscape:document-units="px"
+     inkscape:current-layer="g4535"
+     showgrid="false"
+     inkscape:window-width="1536"
+     inkscape:window-height="811"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     fit-margin-top="10"
+     units="px"
+     fit-margin-right="10"
+     fit-margin-bottom="10"
+     fit-margin-left="10" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-282.77522,-91.151566)">
+    <g
+       id="g4516">
+      <g
+         id="g4535">
+        <rect
+           y="126.83548"
+           x="358.59402"
+           height="150.51358"
+           width="27.872883"
+           id="rect3851"
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:0.50168633;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <rect
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:0.50168633;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect3849"
+           width="27.872883"
+           height="150.51358"
+           x="398.72894"
+           y="126.83548" />
+        <rect
+           y="126.83548"
+           x="318.45914"
+           height="150.51358"
+           width="27.872883"
+           id="rect3841"
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:0.50168633;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <circle
+           id="path3002"
+           style="fill:#b3b3b3;fill-opacity:1;stroke:#000000;stroke-width:1.505059;stroke-miterlimit:4;stroke-dasharray:none"
+           cx="372.73294"
+           cy="182.02481"
+           r="9.6288137" />
+        <circle
+           style="fill:#b3b3b3;fill-opacity:1;stroke:#000000;stroke-width:1.505059;stroke-miterlimit:4;stroke-dasharray:none"
+           id="path3004"
+           cx="412.86783"
+           cy="202.09227"
+           r="9.6288137" />
+        <circle
+           id="path3006"
+           style="fill:#b3b3b3;fill-opacity:1;stroke:#000000;stroke-width:1.505059;stroke-miterlimit:4;stroke-dasharray:none"
+           cx="372.73294"
+           cy="222.15971"
+           r="9.6288137" />
+        <circle
+           style="fill:#b3b3b3;fill-opacity:1;stroke:#000000;stroke-width:1.505059;stroke-miterlimit:4;stroke-dasharray:none"
+           id="path3008"
+           cx="332.59802"
+           cy="182.02481"
+           r="9.6288137" />
+        <circle
+           style="fill:#b3b3b3;fill-opacity:1;stroke:#000000;stroke-width:1.505059;stroke-miterlimit:4;stroke-dasharray:none"
+           id="path3010"
+           cx="332.59802"
+           cy="222.15971"
+           r="9.6288137" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1.505059;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 342.22684,182.02481 h 20.87729"
+           id="path3866"
+           inkscape:connector-type="polyline"
+           inkscape:connector-curvature="0"
+           inkscape:connection-start="#path3008"
+           inkscape:connection-start-point="d4"
+           inkscape:connection-end="#path3002"
+           inkscape:connection-end-point="d4" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1.505059;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 381.3451,186.3309 22.91057,11.45528"
+           id="path3868"
+           inkscape:connector-type="polyline"
+           inkscape:connector-curvature="0"
+           inkscape:connection-start="#path3002"
+           inkscape:connection-start-point="d4"
+           inkscape:connection-end="#path3004"
+           inkscape:connection-end-point="d4" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1.505059;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 342.22684,222.15972 h 20.87729"
+           id="path3870"
+           inkscape:connector-type="polyline"
+           inkscape:connector-curvature="0"
+           inkscape:connection-start="#path3010"
+           inkscape:connection-start-point="d4"
+           inkscape:connection-end="#path3006"
+           inkscape:connection-end-point="d4" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1.505059;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 381.3451,217.85364 22.91057,-11.45529"
+           id="path3872"
+           inkscape:connector-type="polyline"
+           inkscape:connector-curvature="0"
+           inkscape:connection-start="#path3006"
+           inkscape:connection-start-point="d4"
+           inkscape:connection-end="#path3004"
+           inkscape:connection-end-point="d4" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1.505059;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 339.40662,188.83341 26.51772,26.51771"
+           id="path3874"
+           inkscape:connector-type="polyline"
+           inkscape:connector-curvature="0"
+           inkscape:connection-start="#path3008"
+           inkscape:connection-start-point="d4"
+           inkscape:connection-end="#path3006"
+           inkscape:connection-end-point="d4" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:1.41099274;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 339.40663,215.35112 26.51771,-26.51771"
+           id="path3876"
+           inkscape:connector-type="polyline"
+           inkscape:connector-curvature="0"
+           inkscape:connection-start="#path3010"
+           inkscape:connection-start-point="d4"
+           inkscape:connection-end="#path3002"
+           inkscape:connection-end-point="d4" />
+        <text
+           id="text3178"
+           y="290.57755"
+           x="317.49652"
+           style="font-style:normal;font-weight:normal;font-size:6.02023602px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.50168633"
+           xml:space="preserve"><tspan
+             y="290.57755"
+             x="317.49652"
+             sodipodi:role="line"
+             id="tspan3190"
+             style="font-size:11.03709888px;line-height:1.25;font-family:sans-serif;stroke-width:0.50168633">Radial Basis</tspan><tspan
+             y="304.37393"
+             x="317.49652"
+             sodipodi:role="line"
+             id="tspan3202"
+             style="font-size:11.03709888px;line-height:1.25;font-family:sans-serif;stroke-width:0.50168633">Network (RBN)</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
