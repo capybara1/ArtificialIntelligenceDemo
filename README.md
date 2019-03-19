@@ -279,13 +279,16 @@ Resources:
 - [A Neural Network Playground](https://playground.tensorflow.org/)
 - [ConvnetJS demo: toy 2d classification with 2-layer neural network](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
 
-## Jupyter Notebook
+## Tools
 
-### Tutorials
+### Jupyter Notebook
+
+#### Resources
 
 - [A gallery of interesting Jupyter Notebooks](https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks)
-- [Deep Learning with Python, TensorFlow, and Keras tutorial](https://www.youtube.com/watch?v=wQ8BIBpya2k)
+- [Deep Learning basics with Python, TensorFlow and Keras](https://www.youtube.com/playlist?list=PLQVvvaa0QuDfhTox0AjmQ6tvTgMBZBEXN)
+- [Jupyter Notebook Cheat Sheets](https://ugoproto.github.io/ugo_py_doc/JN_CS/)
 
-### Troubleshooting
+#### Troubleshooting
 
-- [Notebook gives blank page when start ](https://github.com/jupyter/notebook/issues/4467#issuecomment-471867371)
+- [Notebook gives blank page when start](https://github.com/jupyter/notebook/issues/4467#issuecomment-471867371)
