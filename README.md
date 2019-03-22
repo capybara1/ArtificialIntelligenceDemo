@@ -60,11 +60,19 @@ Resources:
 
 ### Problems
 
+- [Choosing the right estimator](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html)
+
 #### Regression
+
+> Predicting a continuous-valued attribute associated with an object
+([source](https://scikit-learn.org/stable/index.html))
 
 Estimating the relationships among variables
 
 #### Classification
+
+> Identifying to which category an object belongs to
+([source](https://scikit-learn.org/stable/index.html))
 
 Output represents the probability that a class can be assocaited with the input
 
@@ -72,7 +80,15 @@ Resources:
 - [Machine Learning anhand von drei Algorithmen erklärt](https://www.golem.de/news/random-forest-k-means-genetik-machine-learning-anhand-von-drei-algorithmen-erklaert-1810-136755.html)
 - [Was Regressionen leisten können](https://www.golem.de/news/kuenstliche-intelligenz-wie-computer-lernen-1810-135633-2.html)
 
+#### Clustering
 
+> Automatic grouping of similar objects into sets
+([source](https://scikit-learn.org/stable/index.html))
+
+#### Dimensionality reduction
+
+> Reducing the number of random variables to consider
+([source](https://scikit-learn.org/stable/index.html))
 
 ## Random Forests
 
@@ -276,10 +292,16 @@ Penalizing to complex in order to mitigate the risk of overfitting
 Resources:
 - [An Overview of Regularization Techniques in Deep Learning (with Python code)](https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/)
 
+### Predications
+
+- [How to Make Predictions with Keras](https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/)
+
 ## Sample Data
 
 - MNIST Database
   - Handwritten numbers
+
+- [The Best 25 Datasets for Natural Language Processing](https://gengo.ai/datasets/the-best-25-datasets-for-natural-language-processing/)
 
 Resources:
 - [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
@@ -295,6 +317,10 @@ Resources:
 ## Datenformate 
 
 - [HDF5](https://www.hdfgroup.org/)
+
+## Normalization
+
+- [What is One Hot Encoding? Why And When do you have to use it?](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
 
 ## Tools
 
