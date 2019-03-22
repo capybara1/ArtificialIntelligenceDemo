@@ -1,6 +1,6 @@
 pre-commit
 black
-blacken-docs
+blacken-docs==0.5.0
 tensorflow
 numpy
 scipy
