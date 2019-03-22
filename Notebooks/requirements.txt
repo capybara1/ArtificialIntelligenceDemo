@@ -1,4 +1,7 @@
+pre-commit
+black
+blacken-docs
 tensorflow
-jupyter
-matplotlib
 pandas
+matplotlib
+jupyter
