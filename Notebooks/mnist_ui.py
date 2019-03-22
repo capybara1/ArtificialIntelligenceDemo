@@ -1,18 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# pylint: disable=missing-docstring, invalid-name
 
 """
 GUI that may be used to test models,
 trained with the the MNIST dataset.
 """
 
+import sys
 import tensorflow as tf
-from PyQt5.QtCore import Qt, QPoint, QSize, QThread, QMutex, QWaitCondition, pyqtSignal
+from PyQt5.QtCore import Qt, QPoint, QThread, QMutex, QWaitCondition, pyqtSignal
 from PyQt5.QtGui import QIcon, QImage, QPen, QPainter
 from PyQt5.QtWidgets import QApplication, QMainWindow, QAction
 import numpy as np
 import scipy as sp
-import sys
 
 BRUSH_SIZE = 14
 BRUSH_COLOR = Qt.black
@@ -21,15 +22,20 @@ MODEL_NAME = "tf_mnist_dnn.model"
 
 
 class SharedData:
+    """
+    Provides access to shared data
+    between Window and Classifier
+    """
+
     def __init__(self):
         self._mutex = QMutex()
         self._data = None
-        self._dataAvailable = QWaitCondition()
+        self._data_available = QWaitCondition()
 
     def consume(self):
         self._mutex.lock()
-        if self._data == None:
-            self._dataAvailable.wait(self._mutex)
+        if self._data is None:
+            self._data_available.wait(self._mutex)
         result = self._data
         self._data = None
         self._mutex.unlock()
@@ -38,31 +44,39 @@ class SharedData:
     def provide(self, data):
         self._mutex.lock()
         self._data = data
-        self._dataAvailable.wakeAll()
+        self._data_available.wakeAll()
         self._mutex.unlock()
 
 
 class Classifier(QThread):
+    """
+    Implements a classifier for numbers
+    using the Tensorflow model internally
+    """
 
     classification_completed = pyqtSignal(str)
 
-    def __init__(self, sharedData):
+    def __init__(self, shared_data):
         super().__init__()
-        self._sharedData = sharedData
+        self._shared_data = shared_data
 
     def run(self):
         model = tf.keras.models.load_model(MODEL_NAME)
         while True:
-            data = self._sharedData.consume()
+            data = self._shared_data.consume()
             predictions = model.predict_classes(data)
             self.classification_completed.emit(str(predictions[0]))
 
 
 class Window(QMainWindow):
-    def __init__(self, sharedData):
+    """
+    The main window of the application
+    """
+
+    def __init__(self, shared_data):
         super().__init__()
 
-        self._sharedData = sharedData
+        self._shared_data = shared_data
 
         self.initUI()
 
@@ -84,13 +98,13 @@ class Window(QMainWindow):
         self._image = QImage(self.size(), QImage.Format_Grayscale8)
         self._image.fill(Qt.white)
 
-        mainMenu = self.menuBar()
-        editMenu = mainMenu.addMenu("Edit")
+        main_menu = self.menuBar()
+        edit_menu = main_menu.addMenu("Edit")
 
-        clearAction = QAction("Clear", self)
-        clearAction.setShortcut("Return")
-        clearAction.triggered.connect(self.clear)
-        editMenu.addAction(clearAction)
+        clear_action = QAction("Clear", self)
+        clear_action.setShortcut("Return")
+        clear_action.triggered.connect(self.clear)
+        edit_menu.addAction(clear_action)
 
         self.statusBar().showMessage("prediction:")
 
@@ -114,9 +128,9 @@ class Window(QMainWindow):
             self._drawing = False
             self.evaluateInput()
 
-    def paintEvent(self, event):
-        canvasPainter = QPainter(self)
-        canvasPainter.drawImage(self.rect(), self._image, self._image.rect())
+    def paintEvent(self, _):
+        canvas_painter = QPainter(self)
+        canvas_painter.drawImage(self.rect(), self._image, self._image.rect())
 
     def evaluateInput(self):
         width = self._image.width()
@@ -126,9 +140,9 @@ class Window(QMainWindow):
         orig_image = np.frombuffer(ptr, dtype=np.uint8).reshape((width, height))
         scaled_image = sp.misc.imresize(orig_image, (28, 28))
         data = scaled_image.reshape((1, 28, 28))
-        self._sharedData.provide(data)
+        self._shared_data.provide(data)
 
-    def showResult(self, text):
+    def showResult(self, text: str):
         self.statusBar().showMessage(f"prediction: {text}")
 
     def clear(self):
@@ -137,12 +151,16 @@ class Window(QMainWindow):
         self.update()
 
 
-if __name__ == "__main__":
+def main():
     app = QApplication(sys.argv)
-    sharedData = SharedData()
-    classifier = Classifier(sharedData)
+    shared_data = SharedData()
+    classifier = Classifier(shared_data)
     classifier.start()
-    window = Window(sharedData)
+    window = Window(shared_data)
     classifier.classification_completed.connect(window.showResult)
     window.show()
     app.exec()
+
+
+if __name__ == "__main__":
+    main()

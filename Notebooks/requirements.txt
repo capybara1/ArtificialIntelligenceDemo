@@ -1,6 +1,7 @@
 pre-commit
 black
 blacken-docs==0.5.0
+pylint==2.3.1
 tensorflow
 numpy
 scipy
