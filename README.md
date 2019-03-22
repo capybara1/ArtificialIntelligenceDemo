@@ -114,14 +114,27 @@ Specialized layers:
 Resources:
 - [Convolutional Neural Network](https://de.wikipedia.org/wiki/Convolutional_Neural_Network)
 - [Convolutional Neural Network (CNN) | Convolutional Neural Networks With TensorFlow | Edureka](https://www.youtube.com/watch?v=umGJ30-15_A)
+- [Visualizing Various Filter Initializers in Keras](https://blog.goodaudience.com/visualizing-various-filter-initializers-in-keras-ca14c996db22)
 
-### Recurrent Neural Network
+### Recurrent Neural Network (RNN)
 
 ![recurrent neural network diagram](./media/Recurrent_NN.svg)
+
+Background
+
+- Used with sequential data
 
 ### Long Short-Term Memory (LSTM) Recurrent Neural Network
 
 ![lstm recurrent network diagram](./media/LSTM_Recurrent_NN.svg)
+
+Background
+
+- Tackles the problem that RNN's  are not optimal for long seuqences
+
+Resources
+
+- [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 ### Hopfield Network
 
@@ -279,6 +292,10 @@ Resources:
 - [A Neural Network Playground](https://playground.tensorflow.org/)
 - [ConvnetJS demo: toy 2d classification with 2-layer neural network](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
 
+## Datenformate 
+
+- [HDF5](https://www.hdfgroup.org/)
+
 ## Tools
 
 ### Jupyter Notebook
@@ -292,3 +309,10 @@ Resources:
 #### Troubleshooting
 
 - [Notebook gives blank page when start](https://github.com/jupyter/notebook/issues/4467#issuecomment-471867371)
+- [Fehlermeldung "<tensor> is not an element of this graph." when loading model](https://github.com/keras-team/keras/issues/6462)
+  - Assure the model is used in the same thread where it has been loaded
+
+## Examples
+
+- [AI Experiments](https://experiments.withgoogle.com/collection/ai)
+- [Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE)](https://nvlabs.github.io/SPADE/)
