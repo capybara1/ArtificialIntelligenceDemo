@@ -7,14 +7,25 @@
 ```
 virtualenv --system-site-packages -p python3 ./venv
 .\venv\Scripts\activate
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
+pre-commit install
 deactivate
 ```
 
-# Use
+# Usage (Windows)
+
+## Jupyter Notebook
 
 ```
 .\venv\Scripts\activate
-jupyter notebook
+python -m notebook
+deactivate
+```
+
+## UI for MNIST Handriting
+
+```
+.\venv\Scripts\activate
+python .\mnist_ui.py
 deactivate
 ```
