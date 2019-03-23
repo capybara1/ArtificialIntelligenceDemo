@@ -10,4 +10,5 @@ pandas
 matplotlib
 jupyter
 Pillow
+requests
 pyqt5
