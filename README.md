@@ -128,9 +128,11 @@ Specialized layers:
   - Regular NN
 
 Resources:
+
 - [Convolutional Neural Network](https://de.wikipedia.org/wiki/Convolutional_Neural_Network)
 - [Convolutional Neural Network (CNN) | Convolutional Neural Networks With TensorFlow | Edureka](https://www.youtube.com/watch?v=umGJ30-15_A)
 - [Visualizing Various Filter Initializers in Keras](https://blog.goodaudience.com/visualizing-various-filter-initializers-in-keras-ca14c996db22)
+- [Keras Conv2D and Convolutional Layers](https://www.pyimagesearch.com/2018/12/31/keras-conv2d-and-convolutional-layers/)
 
 ### Recurrent Neural Network (RNN)
 
@@ -342,3 +344,7 @@ Resources:
 
 - [AI Experiments](https://experiments.withgoogle.com/collection/ai)
 - [Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE)](https://nvlabs.github.io/SPADE/)
+
+# Social Impact
+
+- [Wirbel um Reproduzierbarkeitskrise durch KI](https://www.heise.de/newsticker/meldung/Wirbel-um-Reproduzierbarkeitskrise-durch-KI-4326803.html)
