@@ -9,3 +9,12 @@ repos:
   rev: v0.5.0
   hooks:
   - id: blacken-docs
+- repo: local
+  hooks:
+  - id: pylint
+    name: pylint
+    description: Runs pylint on python sources
+    language: system
+    entry: pylint
+    types: [python]
+    args: ["--rcfile=Notebooks\\pylintrc"]
