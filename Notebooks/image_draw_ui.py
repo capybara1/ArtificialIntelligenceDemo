@@ -69,7 +69,7 @@ class Classifier(QThread):
         model = tf.keras.models.load_model(MODEL_NAME)
         while True:
             data = self._shared_data.consume()
-            predictions = model.predict_classes(data)
+            predictions = model.predict_classes(data.reshape((1, 28, 28)))
             self.classification_completed.emit(str(predictions[0]))
 
 
@@ -142,7 +142,9 @@ class Window(QMainWindow):
         ptr.setsize(width * height)
         orig_image = np.frombuffer(ptr, dtype=np.uint8).reshape((width, height))
         scaled_image = sp.misc.imresize(orig_image, (28, 28))
-        data = scaled_image.reshape((1, 28, 28))
+        data = np.subtract(
+            np.full((28, 28), 255, dtype=scaled_image.dtype), scaled_image
+        )
         self._shared_data.provide(data)
 
     def showResult(self, text: str):
