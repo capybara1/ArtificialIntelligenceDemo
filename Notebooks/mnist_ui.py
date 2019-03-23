@@ -15,6 +15,11 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QAction
 import numpy as np
 import scipy as sp
 
+WINDOW_TOP = 100
+WINDOW_LEFT = 100
+WINDOW_WIDTH = 280
+WINDOW_HEIGHT = 280
+
 BRUSH_SIZE = 14
 BRUSH_COLOR = Qt.black
 
@@ -84,15 +89,12 @@ class Window(QMainWindow):
         self._last_point = QPoint()
 
     def initUI(self):
-        top = 100
-        left = 100
-        width = 280
-        height = 280
 
         icon = "icons/pain.png"
 
         self.setWindowTitle("MNIST Test UI")
-        self.setGeometry(top, left, width, height)
+        self.setGeometry(WINDOW_TOP, WINDOW_LEFT, WINDOW_WIDTH, WINDOW_HEIGHT)
+        self.setFixedSize(self.size())
         self.setWindowIcon(QIcon(icon))
 
         self._image = QImage(self.size(), QImage.Format_Grayscale8)
@@ -106,6 +108,7 @@ class Window(QMainWindow):
         clear_action.triggered.connect(self.clear)
         edit_menu.addAction(clear_action)
 
+        self.statusBar().setSizeGripEnabled(False)
         self.statusBar().showMessage("prediction:")
 
     def mousePressEvent(self, event):
