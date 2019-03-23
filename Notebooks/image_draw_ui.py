@@ -4,16 +4,20 @@
 
 """
 GUI that may be used to test models,
-trained with the the MNIST dataset.
+trained on classified images
 """
 
+import argparse
 import sys
-import tensorflow as tf
-from PyQt5.QtCore import Qt, QPoint, QThread, QMutex, QWaitCondition, pyqtSignal
+
+from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtGui import QIcon, QImage, QPen, QPainter
 from PyQt5.QtWidgets import QApplication, QMainWindow, QAction
 import numpy as np
 import scipy as sp
+
+from ui.sync import SharedData
+from ui.algorithms import Classifier
 
 WINDOW_TOP = 100
 WINDOW_LEFT = 100
@@ -22,55 +26,6 @@ WINDOW_HEIGHT = 280
 
 BRUSH_SIZE = 14
 BRUSH_COLOR = Qt.black
-
-MODEL_NAME = "tf_mnist_dnn.model"
-
-
-class SharedData:
-    """
-    Provides access to shared data
-    between Window and Classifier
-    """
-
-    def __init__(self):
-        self._mutex = QMutex()
-        self._data = None
-        self._data_available = QWaitCondition()
-
-    def consume(self):
-        self._mutex.lock()
-        if self._data is None:
-            self._data_available.wait(self._mutex)
-        result = self._data
-        self._data = None
-        self._mutex.unlock()
-        return result
-
-    def provide(self, data):
-        self._mutex.lock()
-        self._data = data
-        self._data_available.wakeAll()
-        self._mutex.unlock()
-
-
-class Classifier(QThread):
-    """
-    Implements a classifier for numbers
-    using the Tensorflow model internally
-    """
-
-    classification_completed = pyqtSignal(str)
-
-    def __init__(self, shared_data):
-        super().__init__()
-        self._shared_data = shared_data
-
-    def run(self):
-        model = tf.keras.models.load_model(MODEL_NAME)
-        while True:
-            data = self._shared_data.consume()
-            predictions = model.predict_classes(data.reshape((1, 28, 28)))
-            self.classification_completed.emit(str(predictions[0]))
 
 
 class Window(QMainWindow):
@@ -157,9 +112,19 @@ class Window(QMainWindow):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="GUI that may be used to test models.")
+    parser.add_argument(
+        "--model",
+        metavar="PATH",
+        type=str,
+        required=True,
+        help="path to the Tensorflow model file",
+    )
+    args = parser.parse_args()
+
     app = QApplication(sys.argv)
     shared_data = SharedData()
-    classifier = Classifier(shared_data)
+    classifier = Classifier(args.model, shared_data)
     classifier.start()
     window = Window(shared_data)
     classifier.classification_completed.connect(window.showResult)
