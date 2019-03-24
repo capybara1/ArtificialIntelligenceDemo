@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# pylint: disable=missing-docstring
+
+"""
+Module with ui components and auxillary functions
+"""
 
 __all__ = ["input", "algorithms", "widgets"]
