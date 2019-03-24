@@ -7,17 +7,15 @@ GUI that may be used to test models,
 trained on classified images
 """
 
-import argparse
 import sys
 
 from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtGui import QIcon, QImage, QPen, QPainter
 from PyQt5.QtWidgets import QApplication, QMainWindow, QAction
 import numpy as np
-import scipy as sp
 
-from components.sync import SharedData
-from components.algorithms import Classifier
+from components.algorithms import SharedData, Classifier
+from components.input import parse_args_for_image_input, preprocess_image_data
 
 WINDOW_TOP = 100
 WINDOW_LEFT = 100
@@ -33,9 +31,10 @@ class Window(QMainWindow):
     The main window of the application
     """
 
-    def __init__(self, shared_data):
+    def __init__(self, input_shape, shared_data):
         super().__init__()
 
+        self._input_shape = input_shape
         self._shared_data = shared_data
 
         self.initUI()
@@ -95,11 +94,8 @@ class Window(QMainWindow):
         height = self._image.height()
         ptr = self._image.constBits()
         ptr.setsize(width * height)
-        orig_image = np.frombuffer(ptr, dtype=np.uint8).reshape((width, height))
-        scaled_image = sp.misc.imresize(orig_image, (28, 28))
-        data = np.subtract(
-            np.full((28, 28), 255, dtype=scaled_image.dtype), scaled_image
-        )
+        image_data = np.frombuffer(ptr, dtype=np.uint8).reshape((width, height))
+        data = preprocess_image_data(image_data, self._input_shape, True)
         self._shared_data.provide(data)
 
     def showResult(self, text: str):
@@ -112,21 +108,15 @@ class Window(QMainWindow):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="GUI that may be used to test models.")
-    parser.add_argument(
-        "--model",
-        metavar="PATH",
-        type=str,
-        required=True,
-        help="path to the Tensorflow model file",
-    )
-    args = parser.parse_args()
+    args = parse_args_for_image_input()
+    if np.ndim(args.shape) >= 3 and args.shape[2] > 1:
+        raise Exception("Only grayscale input accepted")
 
     app = QApplication(sys.argv)
     shared_data = SharedData()
     classifier = Classifier(args.model, shared_data)
     classifier.start()
-    window = Window(shared_data)
+    window = Window(args.shape, shared_data)
     classifier.classification_completed.connect(window.showResult)
     window.show()
     app.exec()

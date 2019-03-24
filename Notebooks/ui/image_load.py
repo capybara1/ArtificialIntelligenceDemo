@@ -7,7 +7,6 @@ GUI that may be used to test models,
 trained on classified images
 """
 
-import argparse
 import sys
 import re
 from io import BytesIO
@@ -25,8 +24,8 @@ from PyQt5.QtWidgets import (
 from PIL import Image
 import numpy as np
 
-from components.sync import SharedData
-from components.algorithms import Classifier
+from components.algorithms import SharedData, Classifier
+from components.input import parse_args_for_image_input, preprocess_image_data
 
 WINDOW_TOP = 100
 WINDOW_LEFT = 100
@@ -39,9 +38,10 @@ class Window(QMainWindow):
     The main window of the application
     """
 
-    def __init__(self, shared_data):
+    def __init__(self, input_shape, shared_data):
         super().__init__()
 
+        self._input_shape = input_shape
         self._shared_data = shared_data
 
         self.__initUI()
@@ -80,9 +80,10 @@ class Window(QMainWindow):
     def __predictButtonClick(self, _):
         input_str = str(self._text_input.text())
         if re.match("^https?", input_str, re.IGNORECASE):
-            data = loadFromUrl(input_str)
+            image_data = loadFromUrl(input_str)
         else:
-            data = loadFromFile(input_str)
+            image_data = loadFromFile(input_str)
+        data = preprocess_image_data(image_data, self._input_shape)
         self._shared_data.provide(data)
 
     def showResult(self, text: str):
@@ -103,21 +104,13 @@ def loadFromFile(filePath):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="GUI that may be used to test models.")
-    parser.add_argument(
-        "--model",
-        metavar="PATH",
-        type=str,
-        required=True,
-        help="path to the Tensorflow model file",
-    )
-    args = parser.parse_args()
+    args = parse_args_for_image_input()
 
     app = QApplication(sys.argv)
     shared_data = SharedData()
     classifier = Classifier(args.model, shared_data)
     classifier.start()
-    window = Window(shared_data)
+    window = Window(args.shape, shared_data)
     classifier.classification_completed.connect(window.showResult)
     window.show()
     app.exec()

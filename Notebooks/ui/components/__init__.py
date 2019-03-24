@@ -2,4 +2,4 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=missing-docstring
 
-__all__ = ["algorithms", "sync"]
+__all__ = ["input", "algorithms"]
