@@ -8,6 +8,7 @@ trained on classified images
 """
 
 import sys
+import os
 import re
 from io import BytesIO
 
@@ -42,12 +43,12 @@ class Window(QMainWindow):
 
     def __initUI(self):
 
-        icon = "icons/pain.png"
+        icon = "icons/app.png"
 
-        self.setWindowTitle("MNIST Test UI")
+        self.setWindowTitle("Model Test UI")
         self.setGeometry(WINDOW_TOP, WINDOW_LEFT, WINDOW_WIDTH, WINDOW_HEIGHT)
         self.setFixedSize(self.size())
-        self.setWindowIcon(QIcon(icon))
+        self.setWindowIcon(QIcon(get_absolute_path(icon)))
 
         widget = QWidget(self)
 
@@ -82,6 +83,12 @@ class Window(QMainWindow):
 
     def showResult(self, text: str):
         self.statusBar().showMessage(f"prediction: {text}")
+
+
+def get_absolute_path(relative_path):
+    script_dir = os.path.abspath(os.path.dirname(__file__))
+    abs_path = os.path.join(script_dir, relative_path)
+    return abs_path
 
 
 def loadFromUrl(url):

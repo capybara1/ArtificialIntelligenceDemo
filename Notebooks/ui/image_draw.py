@@ -8,6 +8,7 @@ trained on classified images
 """
 
 import sys
+import os
 
 from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtGui import QIcon, QImage, QPen, QPainter
@@ -44,12 +45,12 @@ class Window(QMainWindow):
 
     def initUI(self):
 
-        icon = "icons/pain.png"
+        icon = "icons/app.png"
 
-        self.setWindowTitle("MNIST Test UI")
+        self.setWindowTitle("Model Test UI")
         self.setGeometry(WINDOW_TOP, WINDOW_LEFT, WINDOW_WIDTH, WINDOW_HEIGHT)
         self.setFixedSize(self.size())
-        self.setWindowIcon(QIcon(icon))
+        self.setWindowIcon(QIcon(get_absolute_path(icon)))
 
         self._image = QImage(self.size(), QImage.Format_Grayscale8)
         self._image.fill(Qt.white)
@@ -105,6 +106,12 @@ class Window(QMainWindow):
         self.statusBar().showMessage("prediction:")
         self._image.fill(Qt.white)
         self.update()
+
+
+def get_absolute_path(relative_path):
+    script_dir = os.path.abspath(os.path.dirname(__file__))
+    abs_path = os.path.join(script_dir, relative_path)
+    return abs_path
 
 
 def main():
