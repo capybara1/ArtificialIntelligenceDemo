@@ -13,19 +13,13 @@ from io import BytesIO
 
 import requests
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import (
-    QApplication,
-    QWidget,
-    QMainWindow,
-    QLineEdit,
-    QPushButton,
-    QHBoxLayout,
-)
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QHBoxLayout
 from PIL import Image
 import numpy as np
 
 from components.algorithms import SharedData, Classifier
 from components.input import parse_args_for_image_input, preprocess_image_data
+from components.widgets import FileLocatorEdit
 
 WINDOW_TOP = 100
 WINDOW_LEFT = 100
@@ -59,8 +53,7 @@ class Window(QMainWindow):
         predict_button.setDefault(True)
         predict_button.clicked.connect(self.__predictButtonClick)
 
-        self._text_input = QLineEdit()
-        self._text_input.setPlaceholderText("File Path or URL")
+        self._text_input = FileLocatorEdit(self)
         self._text_input.textChanged.connect(
             lambda: predict_button.setEnabled(self._text_input.text() != "")
         )
