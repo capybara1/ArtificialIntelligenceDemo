@@ -25,12 +25,16 @@ class FileLocatorEdit(QLineEdit):
         urls = data.urls()
         if urls and urls[0].scheme() == "file":
             event.acceptProposedAction()
+        else:
+            super().dragEnterEvent(event)
 
     def dragMoveEvent(self, event):
         data = event.mimeData()
         urls = data.urls()
         if urls and urls[0].scheme() == "file":
             event.acceptProposedAction()
+        else:
+            super().dragMoveEvent(event)
 
     def dropEvent(self, event):
         data = event.mimeData()
@@ -39,3 +43,5 @@ class FileLocatorEdit(QLineEdit):
         if urls and urls[0].scheme() == "file":
             filepath = str(urls[0].path())[1:]
             self.setText(filepath)
+        else:
+            super().dropEvent(event)
