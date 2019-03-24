@@ -49,20 +49,21 @@ class Window(QMainWindow):
         self.setFixedSize(self.size())
         self.setWindowIcon(QIcon(icon))
 
-        predict_button = QPushButton("Predict", enabled=False)
-        predict_button.setDefault(True)
+        widget = QWidget(self)
+
+        predict_button = QPushButton("Predict", widget, enabled=False)
         predict_button.clicked.connect(self.__predictButtonClick)
 
-        self._text_input = FileLocatorEdit(self)
+        self._text_input = FileLocatorEdit(widget)
         self._text_input.textChanged.connect(
             lambda: predict_button.setEnabled(self._text_input.text() != "")
         )
+        self._text_input.returnPressed.connect(predict_button.click)
 
-        hbox = QHBoxLayout()
+        hbox = QHBoxLayout(widget)
         hbox.addWidget(self._text_input)
         hbox.addWidget(predict_button)
 
-        widget = QWidget(self)
         widget.setLayout(hbox)
 
         self.setCentralWidget(widget)
