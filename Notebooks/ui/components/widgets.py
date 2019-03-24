@@ -39,7 +39,6 @@ class FileLocatorEdit(QLineEdit):
     def dropEvent(self, event):
         data = event.mimeData()
         urls = data.urls()
-        print(data.urls())
         if urls and urls[0].scheme() == "file":
             filepath = str(urls[0].path())[1:]
             self.setText(filepath)
