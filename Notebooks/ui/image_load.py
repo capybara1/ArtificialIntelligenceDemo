@@ -25,8 +25,8 @@ from PyQt5.QtWidgets import (
 from PIL import Image
 import numpy as np
 
-from ui.sync import SharedData
-from ui.algorithms import Classifier
+from components.sync import SharedData
+from components.algorithms import Classifier
 
 WINDOW_TOP = 100
 WINDOW_LEFT = 100

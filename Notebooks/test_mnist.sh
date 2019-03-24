@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python image_draw_ui.py --model=tf_mnist_dnn.model $@
+python ui/image_draw.py --model=tf_mnist_dnn.model $@

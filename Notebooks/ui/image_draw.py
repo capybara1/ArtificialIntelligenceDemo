@@ -16,8 +16,8 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QAction
 import numpy as np
 import scipy as sp
 
-from ui.sync import SharedData
-from ui.algorithms import Classifier
+from components.sync import SharedData
+from components.algorithms import Classifier
 
 WINDOW_TOP = 100
 WINDOW_LEFT = 100
