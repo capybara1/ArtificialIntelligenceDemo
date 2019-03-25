@@ -386,7 +386,7 @@ Resources:
 
 ### 2) Preparing Data
 
-#### Normalization
+#### Normalization/Standardization
 
 If the data has a mean of zero and a standard deviation of one,
 the shape of the loss-function will be beneficial for the optimization
@@ -405,8 +405,6 @@ Resources
 #### One-Hot Encoding
 
 - [What is One Hot Encoding? Why And When do you have to use it?](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
-
-
 
 ### 3) Choosing a Model
 
