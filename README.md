@@ -54,6 +54,7 @@ Preconditions
 
 Resources
 
+- [Introduction to Reinforcement Learning — Chapter 1](https://towardsdatascience.com/introduction-to-reinforcement-learning-chapter-1-fc8a196a09e8)
 - [Guest Post (Part I): Demystifying Deep Reinforcement Learning](https://www.intel.ai/demystifying-deep-reinforcement-learning/)
 
 ## Problems
@@ -89,6 +90,10 @@ Resources:
 ([source](https://scikit-learn.org/stable/index.html))
 
 ## Algorithms
+
+Resources
+
+- [Types of Machine Learning Algorithms You Should Know](https://towardsdatascience.com/types-of-machine-learning-algorithms-you-should-know-953a08248861)
 
 ### Random Forests
 
@@ -156,6 +161,10 @@ Resources
 
 - [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
+##### Deep Q Learning
+
+- [Deep Q-Learning with Keras and Gym](https://keon.io/deep-q-learning/)
+
 ##### Hopfield Network
 
 ![hopfield network diagram](./media/Hopfield_Network.svg)
@@ -164,7 +173,7 @@ Resources
 
 ![boltzmann machine diagram](./media/Boltzmann_Machine.svg)
 
-#### Components
+#### Components of a NN
 
 ##### Activation
 
@@ -204,7 +213,9 @@ Resources
 - Needs to be optimized
   - See gradient descent
 
-##### Gradient Descent
+##### Optimizier
+
+Gradient Descent
 
 - Optimization approach, finding a (local) minima
 - Variants
@@ -233,36 +244,6 @@ Resources:
 - Efficient calculation of the gradient at the sampleof the cost function
 - Gives a hint how "steep the slope is"
 - Determines the direction of an adjustment
-
-##### Normalization
-
-- For example scaling
-- Speeds up learning
-
-##### Regularization
-
-Penalizing to complex in order to mitigate the risk of overfitting
-- cost(x) = loss(x) + regularization term
-
-- Algorithms
-  - l1
-    - Based on sum of absolute weights
-    - Motivation
-      - Model complexity and high weights are correlated
-  - l2
-    - Based on squared sum of absolute weights
-  - Dropout
-    - Randomly deactivate nodes
-- Related Algorithms
-  - Early Stop
-    - Stop training when accuracy of test data does not improve
-
-Resources:
-- [An Overview of Regularization Techniques in Deep Learning (with Python code)](https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/)
-
-##### Predictions
-
-- [How to Make Predictions with Keras](https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/)
 
 ## Challenges and Design Decisions
 
@@ -305,6 +286,10 @@ Resources:
 
 - MNIST Database
   - Handwritten numbers
+- ImageNet
+- Iris
+
+Resources
 
 - [The Best 25 Datasets for Natural Language Processing](https://gengo.ai/datasets/the-best-25-datasets-for-natural-language-processing/)
 
@@ -331,13 +316,38 @@ Resources:
 
 ### 3) Choosing a Model
 
-### 4) Hyperparameter Tuning
+### 4) Training
 
 ### 5) Evaluation
 
-### 6) Optimization
+### 6) Hyperparameter Tuning
+
+#### Regularization
+
+Penalizing to complex in order to mitigate the risk of overfitting
+- cost(x) = loss(x) + regularization term
+
+- Algorithms
+  - l1
+    - Based on sum of absolute weights
+    - Motivation
+      - Model complexity and high weights are correlated
+  - l2
+    - Based on squared sum of absolute weights
+  - Dropout
+    - Randomly deactivate nodes
+- Related Algorithms
+  - Early Stop
+    - Stop training when accuracy of test data does not improve
+
+Resources:
+- [An Overview of Regularization Techniques in Deep Learning (with Python code)](https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/)
 
 ### 7) Prediction
+
+Resources
+
+- [How to Make Predictions with Keras](https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/)
 
 ## Tools
 
@@ -357,7 +367,13 @@ Resources:
 
 ## Social Impact
 
+### Reproducibility
+
 - [Wirbel um Reproduzierbarkeitskrise durch KI](https://www.heise.de/newsticker/meldung/Wirbel-um-Reproduzierbarkeitskrise-durch-KI-4326803.html)
+
+### Ethics and Accountability
+
+- [Automation, Ethics And Accountability Of AI Systems](https://www.forbes.com/sites/adigaskell/2018/04/18/automation-ethics-and-accountability-of-ai-systems/)
 
 ## Examples
 
