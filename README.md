@@ -8,10 +8,17 @@ Demo Code with Examples for educational purpose
 
 #### Differentiation
 
-- Weak AI
-  - Focuses on a specific field of application
-- Strong AI
-  - Generalized
+##### Weak AI
+
+Focuses on a specific field of application
+
+##### Strong/Generalized AI
+
+Has the ability to adapt to new situations
+
+Resources
+
+- [Comparing humans with the best Reinforcement Learning algorithms](https://www.youtube.com/watch?v=Ol0-c9OE3VQ)
 
 ### Machine Learning
 
@@ -52,8 +59,14 @@ Preconditions
 
 - Sparse and time-delayed labels
 
+Challenges
+
+- Explore-Exploit Dilemma
+
 Resources
 
+- [An introduction to Reinforcement Learning](https://www.youtube.com/watch?v=JgvyzIkgxF0)
+- [Overcoming sparse rewards in Deep RL: Curiosity, hindsight & auxiliary tasks](https://www.youtube.com/watch?v=0Ey02HT_1Ho)
 - [Introduction to Reinforcement Learning — Chapter 1](https://towardsdatascience.com/introduction-to-reinforcement-learning-chapter-1-fc8a196a09e8)
 - [Guest Post (Part I): Demystifying Deep Reinforcement Learning](https://www.intel.ai/demystifying-deep-reinforcement-learning/)
 
@@ -375,11 +388,25 @@ Resources:
 
 #### Normalization
 
-Leads to a better shape of the loss-function
+If the data has a mean of zero and a standard deviation of one,
+the shape of the loss-function will be beneficial for the optimization
+of the loss-function.
+
+Resources
+
+- [How to Improve Neural Network Stability and Modeling Performance With Data Scaling](https://machinelearningmastery.com/how-to-improve-neural-network-stability-and-modeling-performance-with-data-scaling/)
+- [How to Accelerate Learning of Deep Neural Networks With Batch Normalization](https://machinelearningmastery.com/how-to-accelerate-learning-of-deep-neural-networks-with-batch-normalization/)
+- [How To Prepare Your Data For Machine Learning in Python with Scikit-Learn](https://machinelearningmastery.com/prepare-data-machine-learning-python-scikit-learn/)
+
+#### Data Augmentation
+
+- [Data Augmentation | How to use Deep Learning when you have Limited Data — Part 2](https://medium.com/nanonets/how-to-use-deep-learning-when-you-have-limited-data-part-2-data-augmentation-c26971dc8ced)
 
 #### One-Hot Encoding
 
 - [What is One Hot Encoding? Why And When do you have to use it?](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
+
+
 
 ### 3) Choosing a Model
 
