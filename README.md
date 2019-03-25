@@ -6,7 +6,7 @@ Demo Code with Examples for educational purpose
 
 ### Artificial Intelligence
 
-#### Differenciation
+#### Differentiation
 
 - Weak AI
   - Focuses on a specific field of application
@@ -23,7 +23,7 @@ Resources:
 - [What Is The Difference Between Artificial Intelligence And Machine Learning?](https://www.forbes.com/sites/bernardmarr/2016/12/06/what-is-the-difference-between-artificial-intelligence-and-machine-learning/)
 - [Machine Learning Glossary](https://developers.google.com/machine-learning/glossary/)
 
-#### Differenciation
+#### Differentiation
 
 ##### Supervised Learning
 
