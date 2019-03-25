@@ -299,7 +299,7 @@ Leads to a better shape of the loss-function
 
 ### 6) Optimization
 
-## Challenges and Design Decisions
+#### Challenges
 
 Generalization Problem:
 
