@@ -2,74 +2,72 @@
 
 Demo Code with Examples for educational purpose
 
-## Classification
+## Fields
+
+### Artificial Intelligence
+
+#### Differenciation
 
 - Weak AI
   - Focuses on a specific field of application
 - Strong AI
   - Generalized
 
-## Frameworks
+### Machine Learning
 
-Caffe2
-- Facebook
-CNTK (Cognitive Tool Kit)
-- Microsoft
-Leaf
-MxNet
-- Amazon
-Pytorch
-- Language Bindings
-  - Python
-- Features
-  - Dynamic Computation Graphs (by run)
-    - Grpah is defined on the fly
-    - Better for unstructured data
-TensorFlow
-- Google
-Theano
-- Université de Montréal
-Torch
-- Language Bindings
-  - Lua
-
-Abstraction Framework
-- Keras
-
-Ressources:
-- [Keras Tutorial TensorFlow | Deep Learning with Keras | Building Models with Keras | Edureka](https://www.youtube.com/watch?v=Y1-hQdgftMQ)
-
-## Interchange Formats for Models
-
-- ONNX
-
-## Machine Learning
+A subfield of [Artificial Inteligence](#artificial-inteligence)
 
 Resources:
+
 - [Machine learning](https://en.wikipedia.org/wiki/Machine_learning)
 - [What Is The Difference Between Artificial Intelligence And Machine Learning?](https://www.forbes.com/sites/bernardmarr/2016/12/06/what-is-the-difference-between-artificial-intelligence-and-machine-learning/)
-### Types
+- [Machine Learning Glossary](https://developers.google.com/machine-learning/glossary/)
 
-#### Supervised Learning
+#### Differenciation
 
-#### Semi-Supervised Learning
+##### Supervised Learning
 
-#### Unsupervised Learning
+Preconditions
 
-#### Reinforcement Learning
+- A sufficiently large amount of data with a sufficient quality is available
+- All data is labeled e.g. the desired outcome is associated with each sample
 
-### Problems
+##### Semi-Supervised Learning
+
+Preconditions
+
+- A sufficiently large amount of data with a sufficient quality is available
+- Some of the data is labeled
+
+##### Unsupervised Learning
+
+Preconditions
+
+- A sufficiently large amount of data with a sufficient quality is available
+- None of the data is labeled
+
+##### Reinforcement Learning
+
+Preconditions
+
+- Sparse and time-delayed labels
+
+Resources
+
+- [Guest Post (Part I): Demystifying Deep Reinforcement Learning](https://www.intel.ai/demystifying-deep-reinforcement-learning/)
+
+## Problems
 
 - [Choosing the right estimator](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html)
 
-#### Regression
+### Regression
 
 > Predicting a continuous-valued attribute associated with an object
 ([source](https://scikit-learn.org/stable/index.html))
 
 Estimating the relationships among variables
 
-#### Classification
+### Classification
 
 > Identifying to which category an object belongs to
 ([source](https://scikit-learn.org/stable/index.html))
@@ -80,35 +78,39 @@ Resources:
 - [Machine Learning anhand von drei Algorithmen erklärt](https://www.golem.de/news/random-forest-k-means-genetik-machine-learning-anhand-von-drei-algorithmen-erklaert-1810-136755.html)
 - [Was Regressionen leisten können](https://www.golem.de/news/kuenstliche-intelligenz-wie-computer-lernen-1810-135633-2.html)
 
-#### Clustering
+### Clustering
 
 > Automatic grouping of similar objects into sets
 ([source](https://scikit-learn.org/stable/index.html))
 
-#### Dimensionality reduction
+### Dimensionality reduction
 
 > Reducing the number of random variables to consider
 ([source](https://scikit-learn.org/stable/index.html))
 
-## Random Forests
+## Algorithms
 
-## k-Means
+### Random Forests
 
-## Neural Networks
+### k-Means
 
-### Single Layer Perceptron
+### Neural Networks
+
+#### Types
+
+##### Single Layer Perceptron
 
 ![single layer perceptron diagram](./media/Single_Layer_Perceptron.svg)
 
-### Radial Basis Network (RBN)
+##### Radial Basis Network (RBN)
 
 !radial basis network diagram[](./media/RBN.svg)
 
-### Multi Layer Perceptron
+##### Multi Layer Perceptron
 
 ![multi player perceptron diagram](./media/Multi_Layer_Perceptron.svg)
 
-### Convolutional Neural Network (CNN)
+##### Convolutional Neural Network (CNN)
 
 ![multi player perceptron diagram](./media/CNN.svg)
 
@@ -134,7 +136,7 @@ Resources:
 - [Visualizing Various Filter Initializers in Keras](https://blog.goodaudience.com/visualizing-various-filter-initializers-in-keras-ca14c996db22)
 - [Keras Conv2D and Convolutional Layers](https://www.pyimagesearch.com/2018/12/31/keras-conv2d-and-convolutional-layers/)
 
-### Recurrent Neural Network (RNN)
+##### Recurrent Neural Network (RNN)
 
 ![recurrent neural network diagram](./media/Recurrent_NN.svg)
 
@@ -142,7 +144,7 @@ Background
 
 - Used with sequential data
 
-### Long Short-Term Memory (LSTM) Recurrent Neural Network
+##### Long Short-Term Memory (LSTM) Recurrent Neural Network
 
 ![lstm recurrent network diagram](./media/LSTM_Recurrent_NN.svg)
 
@@ -154,13 +156,113 @@ Resources
 
 - [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
-### Hopfield Network
+##### Hopfield Network
 
 ![hopfield network diagram](./media/Hopfield_Network.svg)
 
-### Boltzmann Machine
+##### Boltzmann Machine
 
 ![boltzmann machine diagram](./media/Boltzmann_Machine.svg)
+
+#### Components
+
+##### Activation
+
+- A function that is applied to the input values before summing up
+- Examples
+  - sigmoid
+    - Formula: sigmoid(x)=1/(1+e^-x)
+    - Useful for squishing values in to the interval of -1 to 1
+  - Rectified Linear Unit (ReLU)
+    - Formula: ReLU(x)=max(x,0)
+    - Replaced sigmoid in practice because it is a faster learner
+
+##### Bias
+
+- A summand that may be included in an activation function to raise or lowers the threshold for a meaningful activation
+
+##### Cost function (loss function)
+
+- Determines how good the actual output is in comparison to the optimal output
+- Examples
+  - Mean squared error
+  - Mean absolute error
+  - Mean absolute percentage error
+  - Mean squared logarithmic error
+  - Squared hinge
+  - Hinge
+  - Categorical hinge
+  - Logarithm of the hyperbolic cosine of the error
+    - log(cosh(x))
+  - categorical crossentropy
+  - Sparse categorical crossentropy
+  - Binary crossentropy
+  - Kullback-Leibler divergence
+  - Poisson
+  - Cosine proximity
+- Result is called the cost of a single training
+- Needs to be optimized
+  - See gradient descent
+
+##### Gradient Descent
+
+- Optimization approach, finding a (local) minima
+- Variants
+  - Batch gradient descent
+  - Stochastic gradient descent
+    - Not averaging over the entire training data
+    - Instead using mini batches of training data
+  - Mini-batch gradient descent
+- Algorithms
+  - Stochastic gradient descent (SGD)
+  - RMSprop
+  - Adagrad
+  - Adadelta
+  - Adam
+  - Adamax
+  - Nadam
+- Challenges
+  - Choosing proper learning rate
+  - Not getting trapped in a suboptimal local minima
+
+Resources:
+- [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent/)
+
+##### Backpropagation
+
+- Efficient calculation of the gradient at the sampleof the cost function
+- Gives a hint how "steep the slope is"
+- Determines the direction of an adjustment
+
+##### Normalization
+
+- For example scaling
+- Speeds up learning
+
+##### Regularization
+
+Penalizing to complex in order to mitigate the risk of overfitting
+- cost(x) = loss(x) + regularization term
+
+- Algorithms
+  - l1
+    - Based on sum of absolute weights
+    - Motivation
+      - Model complexity and high weights are correlated
+  - l2
+    - Based on squared sum of absolute weights
+  - Dropout
+    - Randomly deactivate nodes
+- Related Algorithms
+  - Early Stop
+    - Stop training when accuracy of test data does not improve
+
+Resources:
+- [An Overview of Regularization Techniques in Deep Learning (with Python code)](https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/)
+
+##### Predictions
+
+- [How to Make Predictions with Keras](https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/)
 
 ## Challenges and Design Decisions
 
@@ -195,110 +297,11 @@ Resources:
 - [Fedora Linux, Chrome OS, KI-Fails | c't uplink 24.8](https://youtu.be/1ESqpc2jPiU?t=3830)
 - [Binding problem](https://en.wikipedia.org/wiki/Binding_problem)
 
-## Terms
+## Process
 
-Resources:
-- [Machine Learning Glossary](https://developers.google.com/machine-learning/glossary/)
+- [The 7 Steps of Machine Learning](https://towardsdatascience.com/the-7-steps-of-machine-learning-2877d7e5548e)
 
-### Activation
-
-- A function that is applied to the input values before summing up
-- Examples
-  - sigmoid
-    - Formula: sigmoid(x)=1/(1+e^-x)
-    - Useful for squishing values in to the interval of -1 to 1
-  - Rectified Linear Unit (ReLU)
-    - Formula: ReLU(x)=max(x,0)
-    - Replaced sigmoid in practice because it is a faster learner
-
-### Bias
-
-- A summand that may be included in an activation function to raise or lowers the threshold for a meaningful activation
-
-### Cost function (loss function)
-
-- Determines how good the actual output is in comparison to the optimal output
-- Examples
-  - Mean squared error
-  - Mean absolute error
-  - Mean absolute percentage error
-  - Mean squared logarithmic error
-  - Squared hinge
-  - Hinge
-  - Categorical hinge
-  - Logarithm of the hyperbolic cosine of the error
-    - log(cosh(x))
-  - categorical crossentropy
-  - Sparse categorical crossentropy
-  - Binary crossentropy
-  - Kullback-Leibler divergence
-  - Poisson
-  - Cosine proximity
-- Result is called the cost of a single training
-- Needs to be optimized
-  - See gradient descent
-
-### Gradient Descent
-
-- Optimization approach, finding a (local) minima
-- Variants
-  - Batch gradient descent
-  - Stochastic gradient descent
-    - Not averaging over the entire training data
-    - Instead using mini batches of training data
-  - Mini-batch gradient descent
-- Algorithms
-  - Stochastic gradient descent (SGD)
-  - RMSprop
-  - Adagrad
-  - Adadelta
-  - Adam
-  - Adamax
-  - Nadam
-- Challenges
-  - Choosing proper learning rate
-  - Not getting trapped in a suboptimal local minima
-
-Resources:
-- [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent/)
-
-### Backpropagation
-
-- Efficient calculation of the gradient at the sampleof the cost function
-- Gives a hint how "steep the slope is"
-- Determines the direction of an adjustment
-
-### Normalization
-
-- For example scaling
-- Speeds up learning
-
-### Regularization
-
-Penalizing to complex in order to mitigate the risk of overfitting
-- cost(x) = loss(x) + regularization term
-
-- Algorithms
-  - l1
-    - Based on sum of absolute weights
-    - Motivation
-      - Model complexity and high weights are correlated
-  - l2
-    - Based on squared sum of absolute weights
-  - Dropout
-    - Randomly deactivate nodes
-- Related Algorithms
-  - Early Stop
-    - Stop training when accuracy of test data does not improve
-
-Resources:
-- [An Overview of Regularization Techniques in Deep Learning (with Python code)](https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/)
-
-### Predications
-
-- [How to Make Predictions with Keras](https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/)
-
-## Sample Data
+### 1) Gathering Data
 
 - MNIST Database
   - Handwritten numbers
@@ -316,13 +319,25 @@ Resources:
 - [A Neural Network Playground](https://playground.tensorflow.org/)
 - [ConvnetJS demo: toy 2d classification with 2-layer neural network](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
 
-## Datenformate 
+#### Data Formats 
 
 - [HDF5](https://www.hdfgroup.org/)
 
-## Normalization
+### 2) Preparing Data
+
+#### One-Hot Encoding
 
 - [What is One Hot Encoding? Why And When do you have to use it?](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
+
+### 3) Choosing a Model
+
+### 4) Hyperparameter Tuning
+
+### 5) Evaluation
+
+### 6) Optimization
+
+### 7) Prediction
 
 ## Tools
 
@@ -340,11 +355,11 @@ Resources:
 - [Fehlermeldung "<tensor> is not an element of this graph." when loading model](https://github.com/keras-team/keras/issues/6462)
   - Assure the model is used in the same thread where it has been loaded
 
+## Social Impact
+
+- [Wirbel um Reproduzierbarkeitskrise durch KI](https://www.heise.de/newsticker/meldung/Wirbel-um-Reproduzierbarkeitskrise-durch-KI-4326803.html)
+
 ## Examples
 
 - [AI Experiments](https://experiments.withgoogle.com/collection/ai)
 - [Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE)](https://nvlabs.github.io/SPADE/)
-
-# Social Impact
-
-- [Wirbel um Reproduzierbarkeitskrise durch KI](https://www.heise.de/newsticker/meldung/Wirbel-um-Reproduzierbarkeitskrise-durch-KI-4326803.html)
