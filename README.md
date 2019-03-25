@@ -101,79 +101,7 @@ Resources
 
 ### Neural Networks
 
-#### Types
-
-##### Single Layer Perceptron
-
-![single layer perceptron diagram](./media/Single_Layer_Perceptron.svg)
-
-##### Radial Basis Network (RBN)
-
-!radial basis network diagram[](./media/RBN.svg)
-
-##### Multi Layer Perceptron
-
-![multi player perceptron diagram](./media/Multi_Layer_Perceptron.svg)
-
-##### Convolutional Neural Network (CNN)
-
-![multi player perceptron diagram](./media/CNN.svg)
-
-Reduces complexity of fully connected NN's caused by
-high number of input parameters.
-
-Specialized layers:
-- Convolutional Layer
-  - Applies convolution 
-- ReLU Layer
-  - Applies activation function to each pixel
-- Pooling Layer
-  - Shrinking the input
-  - Usually a filter based on a window
-    - Usually the filter is max
-- Fully-Connected Layer
-  - Regular NN
-
-Resources:
-
-- [Convolutional Neural Network](https://de.wikipedia.org/wiki/Convolutional_Neural_Network)
-- [Convolutional Neural Network (CNN) | Convolutional Neural Networks With TensorFlow | Edureka](https://www.youtube.com/watch?v=umGJ30-15_A)
-- [Visualizing Various Filter Initializers in Keras](https://blog.goodaudience.com/visualizing-various-filter-initializers-in-keras-ca14c996db22)
-- [Keras Conv2D and Convolutional Layers](https://www.pyimagesearch.com/2018/12/31/keras-conv2d-and-convolutional-layers/)
-
-##### Recurrent Neural Network (RNN)
-
-![recurrent neural network diagram](./media/Recurrent_NN.svg)
-
-Background
-
-- Used with sequential data
-
-##### Long Short-Term Memory (LSTM) Recurrent Neural Network
-
-![lstm recurrent network diagram](./media/LSTM_Recurrent_NN.svg)
-
-Background
-
-- Tackles the problem that RNN's  are not optimal for long seuqences
-
-Resources
-
-- [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
-
-##### Deep Q Learning
-
-- [Deep Q-Learning with Keras and Gym](https://keon.io/deep-q-learning/)
-
-##### Hopfield Network
-
-![hopfield network diagram](./media/Hopfield_Network.svg)
-
-##### Boltzmann Machine
-
-![boltzmann machine diagram](./media/Boltzmann_Machine.svg)
-
-#### Components of a NN
+#### Components
 
 ##### Activation
 
@@ -239,11 +167,137 @@ Gradient Descent
 Resources:
 - [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent/)
 
-##### Backpropagation
+##### Loss-Function
+
+Backpropagation
 
 - Efficient calculation of the gradient at the sampleof the cost function
 - Gives a hint how "steep the slope is"
 - Determines the direction of an adjustment
+
+#### Variants
+
+##### Single Layer Perceptron
+
+![single layer perceptron diagram](./media/Single_Layer_Perceptron.svg)
+
+##### Radial Basis Network (RBN)
+
+![radial basis network diagram](./media/RBN.svg)
+
+##### Multi Layer Perceptron
+
+![multi player perceptron diagram](./media/Multi_Layer_Perceptron.svg)
+
+##### Residual Neural Network (ResNet)
+
+![multi player perceptron diagram](./media/ResNet.svg)
+
+##### Convolutional Neural Network (CNN)
+
+![multi player perceptron diagram](./media/CNN.svg)
+
+Reduces complexity of fully connected NN's caused by
+high number of input parameters.
+
+Specialized layers:
+- Convolutional Layer
+  - Applies convolution 
+- ReLU Layer
+  - Applies activation function to each pixel
+- Pooling Layer
+  - Shrinking the input
+  - Usually a filter based on a window
+    - Usually the filter is max
+- Fully-Connected Layer
+  - Regular NN
+
+Resources:
+
+- [Convolutional Neural Network](https://de.wikipedia.org/wiki/Convolutional_Neural_Network)
+- [Convolutional Neural Network (CNN) | Convolutional Neural Networks With TensorFlow | Edureka](https://www.youtube.com/watch?v=umGJ30-15_A)
+- [Visualizing Various Filter Initializers in Keras](https://blog.goodaudience.com/visualizing-various-filter-initializers-in-keras-ca14c996db22)
+- [Keras Conv2D and Convolutional Layers](https://www.pyimagesearch.com/2018/12/31/keras-conv2d-and-convolutional-layers/)
+
+##### Recurrent Neural Network (RNN)
+
+![recurrent neural network diagram](./media/Recurrent_NN.svg)
+
+Background
+
+- Used with sequential data
+
+##### Long Short-Term Memory (LSTM)
+
+![lstm recurrent network diagram](./media/LSTM_Recurrent_NN.svg)
+
+Background
+
+- Tackles the problem that RNN's  are not optimal for long seuqences
+
+Resources
+
+- [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+##### Deep Q Learning
+
+- [Deep Q-Learning with Keras and Gym](https://keon.io/deep-q-learning/)
+
+##### Hopfield Network
+
+![hopfield network diagram](./media/Hopfield_Network.svg)
+
+##### Boltzmann Machine
+
+![boltzmann machine diagram](./media/Boltzmann_Machine.svg)
+
+## Process
+
+- [The 7 Steps of Machine Learning](https://towardsdatascience.com/the-7-steps-of-machine-learning-2877d7e5548e)
+
+### 1) Gathering Data
+
+- MNIST Database
+  - Handwritten numbers
+- ImageNet
+- Iris
+
+Resources
+
+- [The Best 25 Datasets for Natural Language Processing](https://gengo.ai/datasets/the-best-25-datasets-for-natural-language-processing/)
+
+Resources:
+- [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
+- [Deep Learning](http://www.deeplearningbook.org/)
+- [Neural Networks, Manifolds, and Topology](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)
+- [Neural Networks - 3Blue1Brown Series](https://www.youtube.com/playlist?&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
+- [Netzgespinste - Die Mathematik neuronaler Netze: einfache Mechanismen, komplexe Konstruktion](https://www.heise.de/select/ct/2016/06/1458191210995647)
+- [Machine Learning Recipes with Josh Gordon](https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
+- [Fedora Linux, Chrome OS, KI-Fails | c't uplink 24.8](https://youtu.be/1ESqpc2jPiU?t=3398)
+- [A Neural Network Playground](https://playground.tensorflow.org/)
+- [ConvnetJS demo: toy 2d classification with 2-layer neural network](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
+
+#### Data Formats 
+
+- [HDF5](https://www.hdfgroup.org/)
+
+### 2) Preparing Data
+
+#### Normalization
+
+Leads to a better shape of the loss-function
+
+#### One-Hot Encoding
+
+- [What is One Hot Encoding? Why And When do you have to use it?](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
+
+### 3) Choosing a Model
+
+### 4) Training
+
+### 5) Evaluation
+
+### 6) Optimization
 
 ## Challenges and Design Decisions
 
@@ -278,49 +332,7 @@ Resources:
 - [Fedora Linux, Chrome OS, KI-Fails | c't uplink 24.8](https://youtu.be/1ESqpc2jPiU?t=3830)
 - [Binding problem](https://en.wikipedia.org/wiki/Binding_problem)
 
-## Process
-
-- [The 7 Steps of Machine Learning](https://towardsdatascience.com/the-7-steps-of-machine-learning-2877d7e5548e)
-
-### 1) Gathering Data
-
-- MNIST Database
-  - Handwritten numbers
-- ImageNet
-- Iris
-
-Resources
-
-- [The Best 25 Datasets for Natural Language Processing](https://gengo.ai/datasets/the-best-25-datasets-for-natural-language-processing/)
-
-Resources:
-- [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
-- [Deep Learning](http://www.deeplearningbook.org/)
-- [Neural Networks, Manifolds, and Topology](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)
-- [Neural Networks - 3Blue1Brown Series](https://www.youtube.com/playlist?&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
-- [Netzgespinste - Die Mathematik neuronaler Netze: einfache Mechanismen, komplexe Konstruktion](https://www.heise.de/select/ct/2016/06/1458191210995647)
-- [Machine Learning Recipes with Josh Gordon](https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
-- [Fedora Linux, Chrome OS, KI-Fails | c't uplink 24.8](https://youtu.be/1ESqpc2jPiU?t=3398)
-- [A Neural Network Playground](https://playground.tensorflow.org/)
-- [ConvnetJS demo: toy 2d classification with 2-layer neural network](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
-
-#### Data Formats 
-
-- [HDF5](https://www.hdfgroup.org/)
-
-### 2) Preparing Data
-
-#### One-Hot Encoding
-
-- [What is One Hot Encoding? Why And When do you have to use it?](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
-
-### 3) Choosing a Model
-
-### 4) Training
-
-### 5) Evaluation
-
-### 6) Hyperparameter Tuning
+#### Hyperparameter Tuning
 
 #### Regularization
 
