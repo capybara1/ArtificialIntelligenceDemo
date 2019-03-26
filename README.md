@@ -57,11 +57,22 @@ Preconditions
 
 Preconditions
 
-- Sparse and time-delayed labels
+- Building upon data is not sufficient for solving the problem
+- Modeled as Markov decision process thus optimizing a *sparse* and *time-delayed reward* is required
+
+![Markov Decision Process](./media/Markov_Decision_Process.svg)
 
 Challenges
 
 - Explore-Exploit Dilemma
+- Credit Assignment Problem
+  - When to provide a reward? Not every frame but more than once (sparse labels)
+  - Solution: Reward Shaping
+    - Downsides:
+      - Human interaction required
+      - Alignment Problem (overfitting)
+      - May constrain a policy to the behaviour of humans, which might be undesired
+      - Bound to context
 
 Resources
 
@@ -301,13 +312,13 @@ Background
 
 Background
 
-- Tackles the problem that RNN's  are not optimal for long seuqences
+- Tackles the problem that RNN's are not optimal for long sequences
 
 Resources
 
 - [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
-##### Deep Q Learning
+##### Deep Q Network (DQN)
 
 - [Deep Q-Learning with Keras and Gym](https://keon.io/deep-q-learning/)
 
@@ -494,7 +505,7 @@ Resources
 
 ## Social Impact
 
-### Reproducibility
+### Reproducibility Crisis
 
 - [Wirbel um Reproduzierbarkeitskrise durch KI](https://www.heise.de/newsticker/meldung/Wirbel-um-Reproduzierbarkeitskrise-durch-KI-4326803.html)
 
