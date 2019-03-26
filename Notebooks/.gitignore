@@ -4,4 +4,7 @@ venv
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Local data and artefacts
 *.model
+*.pickle
+*.zip
