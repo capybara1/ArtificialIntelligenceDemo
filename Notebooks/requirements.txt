@@ -12,3 +12,4 @@ jupyter
 Pillow
 requests
 pyqt5
+tqdm

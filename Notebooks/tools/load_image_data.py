@@ -19,6 +19,7 @@ from warnings import warn
 
 import numpy as np
 from PIL import Image
+from tqdm import tqdm
 
 
 @contextmanager
@@ -32,28 +33,35 @@ def create_temp_dir():
 
 
 def process_zip(file_path, categories, shape):
-    """Peforms the loading"""
+    """Processes the ZIP file"""
+    file_name = os.path.basename(file_path)
+    file_base_name = os.path.splitext(file_name)[0]
     with ZipFile(file_path, "r") as zip_ref:
         with create_temp_dir() as temp_dir:
+
+            print(f'Extracting "{file_name}"...')
             zip_ref.extractall(temp_dir)
 
+            print("Processing images...")
             train = load_data(temp_dir, categories, shape)
 
+            print("Strong data...")
             random.shuffle(train)
             train_x, train_y = separate_data_and_labels(train)
+            write_result(train_x, f"X_{file_base_name}.pickle")
+            write_result(train_y, f"Y_{file_base_name}.pickle")
 
-            pickle_path_base = os.path.splitext(os.path.basename(file_path))[0]
-            write_result(train_x, f"X_{pickle_path_base}.pickle")
-            write_result(train_y, f"Y_{pickle_path_base}.pickle")
+            print("Done")
 
 
 def load_data(dir_path, categories, shape):
     """Loads and scales data"""
     train = []
     for category in categories:
+        print('Processing files from category "{category}"...')
         category_path = os.path.join(dir_path, category)
         class_id = categories.index(category)
-        for image_file_name in os.listdir(category_path):
+        for image_file_name in tqdm(os.listdir(category_path)):
             image_file_path = os.path.join(category_path, image_file_name)
             try:
                 img = Image.open(image_file_path)
