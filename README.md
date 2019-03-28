@@ -399,15 +399,23 @@ Resources:
 
 #### Normalization/Standardization
 
-If the data has a mean of zero and a standard deviation of one,
-the shape of the loss-function will be beneficial for the optimization
-of the loss-function.
+Scaling input data affects the shaüe of the loss-function.
+Ensuring values in a range e.g. from 0 to 1 will be beneficial for the optimization
+of the loss-function if the model is initialized with random values in this range.
+
+In case the distribution of the input data is unkown, or known to differ from a Gaussian distribution,
+normalization might be the best option.
+
+In case the distribution of the input data is known to be a Gaussian distribution,
+standardization (a mean of zero and a standard deviation of one) ought to be applied.
 
 Resources
 
 - [How to Improve Neural Network Stability and Modeling Performance With Data Scaling](https://machinelearningmastery.com/how-to-improve-neural-network-stability-and-modeling-performance-with-data-scaling/)
+- [Standardize or Normalize? — Examples in Python](https://medium.com/@rrfd/standardize-or-normalize-examples-in-python-e3f174b65dfc)
 - [How to Accelerate Learning of Deep Neural Networks With Batch Normalization](https://machinelearningmastery.com/how-to-accelerate-learning-of-deep-neural-networks-with-batch-normalization/)
 - [How To Prepare Your Data For Machine Learning in Python with Scikit-Learn](https://machinelearningmastery.com/prepare-data-machine-learning-python-scikit-learn/)
+- [Differences between L1 and L2 as Loss Function and Regularization](http://www.chioka.in/differences-between-l1-and-l2-as-loss-function-and-regularization/)
 
 #### Data Augmentation
 

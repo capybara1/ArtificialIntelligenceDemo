@@ -54,8 +54,13 @@ def process_zip(file_path, categories, shape):
             print("Done")
 
 
+def normalize(data):
+    """Normalizes the given image data"""
+    return data.astype(float) / 255
+
+
 def load_data(dir_path, categories, shape):
-    """Loads and scales data"""
+    """Loads and prepares the data"""
     train = []
     for category in categories:
         print('Processing files from category "{category}"...')
@@ -66,7 +71,7 @@ def load_data(dir_path, categories, shape):
             try:
                 img = Image.open(image_file_path)
                 img = img.resize(shape[0:2], Image.LANCZOS)
-                data = np.array(img)
+                data = normalize(np.array(img))
                 train.append([data, class_id])
             except IOError as exception:
                 warn(str(exception))

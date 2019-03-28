@@ -35,12 +35,30 @@ def parse_args_for_image_input():
     return args
 
 
-def preprocess_image_data(image_data, shape, invert=False):
-    """
-    Preprocesses the image data
-    """
+def resize_image_data(image_data, desired_shape):
+    """ Resize the image data"""
+    result = sp.misc.imresize(image_data, desired_shape)
+    return result
 
-    data = sp.misc.imresize(image_data, shape)
+
+def invert_image_data(image_data):
+    """ Inverts the image data"""
+    result = np.subtract(
+        np.full(image_data.shape, 255, dtype=image_data.dtype), image_data
+    )
+    return result
+
+
+def normalize_image_data(image_data):
+    """Normalizes the given image data"""
+    result = image_data.astype(float) / 255
+    return result
+
+
+def preprocess_image_data(image_data, shape, invert=False):
+    """ Preprocesses the image data"""
+    image_data = resize_image_data(image_data, shape)
     if invert:
-        data = np.subtract(np.full(shape, 255, dtype=image_data.dtype), data)
-    return data
+        image_data = invert_image_data(image_data)
+    result = normalize_image_data(image_data)
+    return result
