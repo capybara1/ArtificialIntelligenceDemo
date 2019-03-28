@@ -417,6 +417,10 @@ Resources
 - [How To Prepare Your Data For Machine Learning in Python with Scikit-Learn](https://machinelearningmastery.com/prepare-data-machine-learning-python-scikit-learn/)
 - [Differences between L1 and L2 as Loss Function and Regularization](http://www.chioka.in/differences-between-l1-and-l2-as-loss-function-and-regularization/)
 
+#### Centering (Images)
+
+- [Normalization and centering of images in MNIST](https://www.kaggle.com/c/digit-recognizer/discussion/6366)
+
 #### Data Augmentation
 
 - [Data Augmentation | How to use Deep Learning when you have Limited Data — Part 2](https://medium.com/nanonets/how-to-use-deep-learning-when-you-have-limited-data-part-2-data-augmentation-c26971dc8ced)
