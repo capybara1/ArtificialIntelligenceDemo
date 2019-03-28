@@ -256,6 +256,10 @@ Backpropagation
 
 #### Variants
 
+Resources
+
+- [The mostly complete chart of Neural Networks, explained](https://towardsdatascience.com/the-mostly-complete-chart-of-neural-networks-explained-3fb6f2367464)
+
 ##### Single Layer Perceptron
 
 ![single layer perceptron diagram](./media/Single_Layer_Perceptron.svg)
@@ -416,6 +420,7 @@ Resources
 - [How to Accelerate Learning of Deep Neural Networks With Batch Normalization](https://machinelearningmastery.com/how-to-accelerate-learning-of-deep-neural-networks-with-batch-normalization/)
 - [How To Prepare Your Data For Machine Learning in Python with Scikit-Learn](https://machinelearningmastery.com/prepare-data-machine-learning-python-scikit-learn/)
 - [Differences between L1 and L2 as Loss Function and Regularization](http://www.chioka.in/differences-between-l1-and-l2-as-loss-function-and-regularization/)
+  - [Distinction: Stability vs. Resiliency – not the same thing](https://prebenormen.com/progress-success-failure/distinction-stability-vs-resiliency-not-the-same-thing)
 
 #### Centering (Images)
 
@@ -436,6 +441,10 @@ Resources
 ### 5) Evaluation
 
 ### 6) Optimization
+
+Resources
+
+- [Hyper-Parameter Optimization](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/19_Hyper-Parameters.ipynb)
 
 #### Challenges
 
@@ -477,7 +486,7 @@ Resources:
 Penalizing to complex in order to mitigate the risk of overfitting
 - cost(x) = loss(x) + regularization term
 
-- Algorithms
+- Norms
   - l1
     - Based on sum of absolute weights
     - Motivation
@@ -486,18 +495,31 @@ Penalizing to complex in order to mitigate the risk of overfitting
     - Based on squared sum of absolute weights
   - Dropout
     - Randomly deactivate nodes
-- Related Algorithms
-  - Early Stop
-    - Stop training when accuracy of test data does not improve
 
-Resources:
+Resources
+
 - [An Overview of Regularization Techniques in Deep Learning (with Python code)](https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/)
+
+#### Early Stopping
+
+Stop training when accuracy of test data does not
+
+Resources
+
+- [Neural Network Early Stopping](https://chrisalbon.com/deep_learning/keras/neural_network_early_stopping/)
 
 ### 7) Prediction
 
 Resources
 
 - [How to Make Predictions with Keras](https://machinelearningmastery.com/how-to-make-classification-and-regression-predictions-for-deep-learning-models-in-keras/)
+
+## Visualization
+
+- 'How neural networks learn' Series
+  - [Part I: Feature Visualization](https://www.youtube.com/watch?v=McgxRxi2Jqo)
+  - [Part II: Adversarial Examples](https://www.youtube.com/watch?v=4rFOkpI0Lcg)
+  - [Part III: The learning dynamics behind generalization and overfitting](https://www.youtube.com/watch?v=pFWiauHOFpY)
 
 ## Tools
 
@@ -524,6 +546,10 @@ Resources
 ### Ethics and Accountability
 
 - [Automation, Ethics And Accountability Of AI Systems](https://www.forbes.com/sites/adigaskell/2018/04/18/automation-ethics-and-accountability-of-ai-systems/)
+
+## Tutorials
+
+- [TensorFlow-Tutorials - Hvass-Labs](https://github.com/Hvass-Labs/TensorFlow-Tutorials)
 
 ## Examples
 
