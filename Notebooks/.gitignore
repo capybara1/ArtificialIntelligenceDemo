@@ -5,6 +5,7 @@ venv
 .ipynb_checkpoints
 
 # Local data and artefacts
+logs
 *.model
 *.pickle
 *.zip
