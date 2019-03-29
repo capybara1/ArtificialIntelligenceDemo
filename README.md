@@ -115,7 +115,7 @@ Resources
 > Reducing the number of random variables to consider
 ([source](https://scikit-learn.org/stable/index.html))
 
-## Algorithms
+## Machine Learning Algorithms
 
 Overview
 
@@ -440,11 +440,18 @@ Resources
 
 ### 5) Evaluation
 
-### 6) Optimization
+### 6) Hyper-Parameter Optimization
+
+Options:
+- Manual Search
+- Grid Search
+- Random Search
+- Bayesian Optimization
 
 Resources
 
 - [Hyper-Parameter Optimization](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/19_Hyper-Parameters.ipynb)
+- [Hyperparameter Optimization - The Math of Intelligence #7](https://www.youtube.com/watch?v=ttE0F7fghfk)
 
 #### Challenges
 

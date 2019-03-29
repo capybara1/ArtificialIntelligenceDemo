@@ -4,6 +4,8 @@ blacken-docs==0.5.0
 pylint==2.3.1
 pylint-venv
 tensorflow==2.0.0-alpha0
+scikit-learn
+scikit-optimize
 numpy
 scipy
 pandas
