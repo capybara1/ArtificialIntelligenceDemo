@@ -558,6 +558,27 @@ Resources
 
 - [TensorFlow-Tutorials - Hvass-Labs](https://github.com/Hvass-Labs/TensorFlow-Tutorials)
 
+## Frameworks
+
+Recommendtations accoding to [Deep Learning Frameworks 2019](https://www.youtube.com/watch?v=SJldOOs4vB8):
+
+- Keras
+  - For Beginners
+- Pytorch or Sonnet
+  - For Research
+- Tensorflow
+  - For production on GCP
+- MXNET
+  - For production on AWS
+- CNTK
+  - For production on Azure
+- DL4J
+  - For Java developers
+- CoreML
+  - For iOS developers
+- ONNX
+  - For interoperability
+
 ## Examples
 
 - [AI Experiments](https://experiments.withgoogle.com/collection/ai)
