@@ -96,7 +96,9 @@ class Window(QMainWindow):
         ptr = self._image.constBits()
         ptr.setsize(width * height)
         image_data = np.frombuffer(ptr, dtype=np.uint8).reshape((width, height))
-        data = preprocess_image_data(image_data, self._input_shape, True)
+        data = preprocess_image_data(
+            image_data, self._input_shape, invert=True, center=True, fit=True
+        )
         self._shared_data.provide(data)
 
     def showResult(self, text: str):
