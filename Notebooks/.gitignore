@@ -5,6 +5,7 @@ venv
 .ipynb_checkpoints
 
 # Local data and artefacts
+Sandbox.ipynb
 logs
 *.model
 *.pickle
