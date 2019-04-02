@@ -78,7 +78,7 @@ def load_data(dir_path, categories, shape, encoder):
                 if len(shape) == 3 and shape[2] == 3 and img.mode != "RGB":
                     warn(f'"image_file_path" is not an RGB image')
                     continue
-                elif len(shape) == 2 or shape[2] == 1 and img.mode != "L":
+                elif (len(shape) < 3 or shape[2] == 1) and img.mode != "L":
                     img = img.convert("L")
                 if not shape is None:
                     img = img.resize(shape[0:2], Image.LANCZOS)
