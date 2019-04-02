@@ -7,7 +7,7 @@ image data from a zip, providing data as pickled
 numpy arrays
 """
 
-from argparse import ArgumentParser
+from argparse import ArgumentParser, ArgumentTypeError
 from contextlib import contextmanager
 from tempfile import mkdtemp
 from shutil import rmtree
@@ -20,6 +20,7 @@ from warnings import warn
 import numpy as np
 from PIL import Image
 from tqdm import tqdm
+from sklearn.preprocessing import OneHotEncoder
 
 
 @contextmanager
@@ -32,26 +33,31 @@ def create_temp_dir():
         rmtree(path)
 
 
-def process_zip(file_path, categories, shape):
+def process_zip(file_path, categories, shape, out_path_prefix):
     """Processes the ZIP file"""
-    file_name = os.path.basename(file_path)
-    file_base_name = os.path.splitext(file_name)[0]
     with ZipFile(file_path, "r") as zip_ref:
         with create_temp_dir() as temp_dir:
 
-            print(f'Extracting "{file_name}"...')
+            print(f'Extracting "{file_path}"...')
             zip_ref.extractall(temp_dir)
 
-            print("Processing images...")
-            train = load_data(temp_dir, categories, shape)
+            process_dir(temp_dir, categories, shape, out_path_prefix)
 
-            print("Strong data...")
-            random.shuffle(train)
-            train_x, train_y = separate_data_and_labels(train)
-            write_result(train_x, f"X_{file_base_name}.pickle")
-            write_result(train_y, f"Y_{file_base_name}.pickle")
 
-            print("Done")
+def process_dir(dir_path, categories, shape, out_path_prefix):
+    """Processes the directory containing the images"""
+    encoder = OneHotEncoder(sparse=False)
+    encoder.fit([[c.label] for c in categories])
+
+    print("Processing images...")
+    train_x, train_y = load_data(dir_path, categories, shape, encoder)
+
+    print("Storing data...")
+    write_result(train_x, out_path_prefix + ".x.pickle")
+    write_result(train_y, out_path_prefix + ".y.pickle")
+    write_result([c.label for c in categories], out_path_prefix + ".l.pickle")
+
+    print("Done")
 
 
 def normalize(data):
@@ -59,23 +65,35 @@ def normalize(data):
     return data.astype(float) / 255
 
 
-def load_data(dir_path, categories, shape):
+def load_data(dir_path, categories, shape, encoder):
     """Loads and prepares the data"""
     train = []
     for category in categories:
-        print('Processing files from category "{category}"...')
-        category_path = os.path.join(dir_path, category)
-        class_id = categories.index(category)
+        print(f'Processing files from category "{category.label}"...')
+        category_path = os.path.join(dir_path, category.path)
         for image_file_name in tqdm(os.listdir(category_path)):
             image_file_path = os.path.join(category_path, image_file_name)
             try:
                 img = Image.open(image_file_path)
-                img = img.resize(shape[0:2], Image.LANCZOS)
+                if len(shape) == 3 and shape[2] == 3 and img.mode != "RGB":
+                    warn(f'"image_file_path" is not an RGB image')
+                    continue
+                elif len(shape) == 2 or shape[2] == 1 and img.mode != "L":
+                    img = img.convert("L")
+                if not shape is None:
+                    img = img.resize(shape[0:2], Image.LANCZOS)
                 data = normalize(np.array(img))
-                train.append([data, class_id])
+                train.append([data, [category.label]])
             except IOError as exception:
                 warn(str(exception))
-    return train
+
+    random.shuffle(train)
+    train_x, labels = separate_data_and_labels(train)
+
+    train_x = np.array(train_x)
+    train_y = encoder.transform(labels)
+
+    return train_x, train_y
 
 
 def separate_data_and_labels(train):
@@ -95,26 +113,67 @@ def write_result(obj, path):
     pickle_out.close()
 
 
+class LabelInfo:
+    """Helper class to extract information about labels"""
+
+    def __init__(self, arg):
+        if not isinstance(arg, str):
+            raise ArgumentTypeError("a label must be of type string")
+        components = arg.split(":")
+        self.label = components[0]
+        self.path = components[-1]
+
+    def __repr__(self):
+        return f"{self.label}:{self.path}" if self.label != self.path else self.label
+
+
 def parse_args():
     """Parses the arguments"""
     parser = ArgumentParser(description="Prepares data in a ZIP file.")
-    parser.add_argument("file", metavar="PATH", type=str, help="path to the ZIP file")
+    parser.add_argument(
+        "in_path",
+        metavar="PATH",
+        type=str,
+        help="path to the directory or the ZIP file containing the images",
+    )
+    parser.add_argument(
+        "categories",
+        metavar="LABEL[:PATH]",
+        type=LabelInfo,
+        nargs="+",
+        help="Labels of a category; each label may optionally "
+        + "followed by a path if the later differs from the label"
+        + 'e.g. "cat:img/cats"',
+    )
     parser.add_argument(
         "--shape",
         metavar="SHAPE",
         type=str,
-        required=True,
-        help='Shape of the input data e.g "28,28"',
+        default=None,
+        help='Resizes the images to a uniform shape e.g "28,28"',
     )
     parser.add_argument(
-        "--category", metavar="NAME", type=str, nargs="+", help="Name of a category"
+        "--out",
+        dest="out_path_prefix",
+        metavar="PREFIX",
+        type=str,
+        default=None,
+        help="Prefix used to generate the name of the output file path",
     )
     args = parser.parse_args()
 
-    args.shape = tuple([int(el) for el in args.shape.split(",", 3)])
+    if not os.path.exists(args.in_path):
+        raise Exception(
+            f'path "{args.in_path}" does not refer to an existing directory or file'
+        )
 
-    if not os.path.exists(args.file):
-        raise Exception(f'path "{args.file}" does not refer to an existing file')
+    if not args.shape is None:
+        args.shape = tuple([int(el) for el in args.shape.split(",", 3)])
+
+    if args.out_path_prefix is None:
+        args.out_path_prefix = os.path.basename(args.in_path)
+        if os.path.isfile(args.in_path):
+            args.out_path_prefix = os.path.splitext(args.out_path_prefix)[0]
 
     return args
 
@@ -122,7 +181,11 @@ def parse_args():
 def main():
     """Executes the module"""
     args = parse_args()
-    process_zip(args.file, args.category, args.shape)
+    extension = os.path.splitext(args.in_path)[1]
+    if extension.lower() == ".zip":
+        process_zip(args.in_path, args.categories, args.shape, args.out_path_prefix)
+    else:
+        process_dir(args.in_path, args.categories, args.shape, args.out_path_prefix)
 
 
 if __name__ == "__main__":
