@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# pylint: disable=missing-docstring, invalid-name
+# pylint: disable=missing-docstring, invalid-name, bad-continuation
 
 """
 GUI that may be used to test models,
@@ -79,11 +79,35 @@ class Window(QMainWindow):
     def __predictButtonClick(self, _):
         input_str = str(self._text_input.text())
         if re.match("^https?", input_str, re.IGNORECASE):
-            image_data = loadFromUrl(input_str)
+            image_data = self.__loadFromUrl(input_str)
         else:
-            image_data = loadFromFile(input_str)
+            image_data = self.__loadFromFile(input_str)
         data = preprocess_image_data(image_data, self._input_shape)
         self._shared_data.provide(data)
+
+    def __loadFromUrl(self, url):
+        response = requests.get(url)
+        result = self.__loadImageData(BytesIO(response.content))
+        return result
+
+    def __loadFromFile(self, filePath):
+        result = self.__loadImageData(filePath)
+        return result
+
+    def __loadImageData(self, src):
+        img = Image.open(src)
+        if (
+            len(self._input_shape) == 3
+            and self._input_shape[2] == 3
+            and img.mode != "RGB"
+        ):
+            img = img.convert("RGB")
+        elif (
+            len(self._input_shape) < 3 or self._input_shape[2] == 1
+        ) and img.mode != "L":
+            img = img.convert("L")
+        data = np.array(img)
+        return data
 
     def showResult(self, text: str):
         self.statusBar().showMessage(f"prediction: {text}")
@@ -93,19 +117,6 @@ def get_absolute_path(relative_path):
     script_dir = os.path.abspath(os.path.dirname(__file__))
     abs_path = os.path.join(script_dir, relative_path)
     return abs_path
-
-
-def loadFromUrl(url):
-    response = requests.get(url)
-    img = Image.open(BytesIO(response.content))
-    data = np.array(img)
-    return data
-
-
-def loadFromFile(filePath):
-    img = Image.open(filePath)
-    data = np.array(img)
-    return data
 
 
 def main():
