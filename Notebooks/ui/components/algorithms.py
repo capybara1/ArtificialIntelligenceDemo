@@ -46,14 +46,20 @@ class Classifier(QThread):
 
     classification_completed = pyqtSignal(str)
 
-    def __init__(self, model_path, shared_data):
+    def __init__(self, model_path, labels, input_shape, shared_data):
         super().__init__()
         self._model_path = model_path
+        self._labels = labels
+        self._input_shape = input_shape
         self._shared_data = shared_data
 
     def run(self):
         model = tf.keras.models.load_model(self._model_path)
         while True:
             data = self._shared_data.consume()
-            predictions = model.predict_classes(data.reshape((1, 28, 28)))
-            self.classification_completed.emit(str(predictions[0]))
+            predictions = model.predict_classes(data.reshape((1, *self._input_shape)))
+            predicted_index = predictions[0]
+            if predicted_index < len(self._labels):
+                self.classification_completed.emit(self._labels[predicted_index])
+            else:
+                self.classification_completed.emit(str(predicted_index))

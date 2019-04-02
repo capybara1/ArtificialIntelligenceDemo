@@ -24,6 +24,13 @@ def parse_args_for_image_input():
         help="path to the Tensorflow model file",
     )
     parser.add_argument(
+        "--labels",
+        dest="labels_path",
+        metavar="PATH",
+        type=str,
+        help="path to the pickled array of labels",
+    )
+    parser.add_argument(
         "--shape",
         metavar="SHAPE",
         type=str,
@@ -59,9 +66,9 @@ def get_bounding_box(img):
     """Finds the bounding box of the drawing in the image"""
     col_sum = np.sum(img, axis=0).nonzero()
     row_sum = np.sum(img, axis=1).nonzero()
-    x1, x2 = col_sum[0][0], col_sum[0][-1]
-    y1, y2 = row_sum[0][0], row_sum[0][-1]
-    result = ((x1, y1), (x2, y2))
+    bb_x1, bb_x2 = col_sum[0][0], col_sum[0][-1]
+    bb_y1, bb_y2 = row_sum[0][0], row_sum[0][-1]
+    result = ((bb_x1, bb_y1), (bb_x2, bb_y2))
     return result
 
 

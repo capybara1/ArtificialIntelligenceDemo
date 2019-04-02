@@ -11,6 +11,7 @@ import sys
 import os
 import re
 from io import BytesIO
+import pickle
 
 import requests
 from PyQt5.QtGui import QIcon
@@ -58,6 +59,9 @@ class Window(QMainWindow):
         self._text_input = FileLocatorEdit(widget)
         self._text_input.textChanged.connect(
             lambda: predict_button.setEnabled(self._text_input.text() != "")
+        )
+        self._text_input.textChanged.connect(
+            lambda: self.statusBar().showMessage("prediction:")
         )
         self._text_input.returnPressed.connect(predict_button.click)
 
@@ -107,9 +111,15 @@ def loadFromFile(filePath):
 def main():
     args = parse_args_for_image_input()
 
+    labels = []
+    if not args.labels_path is None:
+        pickle_in = open(args.labels_path, "rb")
+        labels = pickle.load(pickle_in)
+        pickle_in.close()
+
     app = QApplication(sys.argv)
     shared_data = SharedData()
-    classifier = Classifier(args.model, shared_data)
+    classifier = Classifier(args.model, labels, args.shape, shared_data)
     classifier.start()
     window = Window(args.shape, shared_data)
     classifier.classification_completed.connect(window.showResult)

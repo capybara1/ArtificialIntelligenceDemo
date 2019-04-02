@@ -9,6 +9,7 @@ trained on classified images
 
 import sys
 import os
+import pickle
 
 from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtGui import QIcon, QImage, QPen, QPainter
@@ -121,9 +122,15 @@ def main():
     if np.ndim(args.shape) >= 3 and args.shape[2] > 1:
         raise Exception("Only grayscale input accepted")
 
+    labels = []
+    if not args.labels_path is None:
+        pickle_in = open(args.labels_path, "rb")
+        labels = pickle.load(pickle_in)
+        pickle_in.close()
+
     app = QApplication(sys.argv)
     shared_data = SharedData()
-    classifier = Classifier(args.model, shared_data)
+    classifier = Classifier(args.model, labels, args.shape, shared_data)
     classifier.start()
     window = Window(args.shape, shared_data)
     classifier.classification_completed.connect(window.showResult)
