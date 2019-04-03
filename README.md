@@ -432,7 +432,15 @@ Resources
 
 #### One-Hot Encoding
 
+Usually categories has no a natural relationship to each other, such as a natural ordering.
+Some algorithms can work with such categorical data directly because they might learn a natural ordering
+if a single number are used to represent categories.
+In such cases One-Hot Encoding is key to prevent this unwanted side-effect.
+
+- [Why One-Hot Encode Data in Machine Learning?](https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/)
 - [What is One Hot Encoding? Why And When do you have to use it?](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
+- [How to One Hot Encode Sequence Data in Python](https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/)
+- [One Hot Encoding in Scikit-Learn](https://www.ritchieng.com/machinelearning-one-hot-encoding/)
 
 ### 3) Choosing a Model
 
