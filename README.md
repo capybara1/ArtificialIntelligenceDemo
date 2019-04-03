@@ -324,6 +324,8 @@ Resources
 
 ##### Deep Q Network (DQN)
 
+- [Q Learning Explained (tutorial)](https://www.youtube.com/watch?v=aCEvtRtNO-M)
+- [Deep Q Learning for Video Games - The Math of Intelligence #9](https://www.youtube.com/watch?v=79pmNdyxEGo)
 - [Deep Q-Learning with Keras and Gym](https://keon.io/deep-q-learning/)
 
 ##### Hopfield Network
