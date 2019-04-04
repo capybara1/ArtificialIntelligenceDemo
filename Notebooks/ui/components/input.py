@@ -44,7 +44,8 @@ def parse_args_for_image_input():
 
 def resize_image_data(image_data, desired_shape):
     """ Resize the image data"""
-    result = sp.misc.imresize(image_data, desired_shape)
+    result = sp.misc.imresize(image_data, desired_shape[0:2])
+    result = result.reshape(desired_shape)
     return result
 
 
