@@ -82,7 +82,10 @@ def load_data(dir_path, categories, shape, encoder):
                     img = img.convert("L")
                 if not shape is None:
                     img = img.resize(shape[0:2], Image.LANCZOS)
-                data = normalize(np.array(img))
+                data = np.array(img)
+                if not shape is None:
+                    data = data.reshape(shape)
+                data = normalize(data)
                 train.append([data, [category.label]])
             except IOError as exception:
                 warn(str(exception))
