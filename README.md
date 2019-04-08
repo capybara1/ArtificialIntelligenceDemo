@@ -74,6 +74,14 @@ Challenges
       - May constrain a policy to the behaviour of humans, which might be undesired
       - Bound to context
 
+Model-based learning
+
+Model-free learning
+
+Value iteration
+
+Policy iteration
+
 Resources
 
 - [An introduction to Reinforcement Learning](https://www.youtube.com/watch?v=JgvyzIkgxF0)
@@ -310,17 +318,39 @@ Background
 
 - Used with sequential data
 
+Challenges
+
+- [Vanishing Gradient Problem](https://en.wikipedia.org/wiki/Vanishing_gradient_problem)
+
+Resources
+
+- [Illustrated Guide to Recurrent Neural Networks: Understanding the Intuition](https://www.youtube.com/watch?v=LHXXI4-IEns)
+
 ##### Long Short-Term Memory (LSTM)
 
 ![lstm recurrent network diagram](./media/LSTM_Recurrent_NN.svg)
 
 Background
 
-- Tackles the problem that RNN's are not optimal for long sequences
+- Tackles the [Vanishing Gradient Problem](https://en.wikipedia.org/wiki/Vanishing_gradient_problem) that renders regular RNN's are not optimal for long sequences
 
 Resources
 
+- [Illustrated Guide to LSTM's and GRU's: A step by step explanation](https://www.youtube.com/watch?v=8HyCNIVRbSU)
 - [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+##### Gated Recurrent Unit (GRU)
+
+![lstm recurrent network diagram](./media/GRU.svg)
+
+Background
+
+- As with an LSTM, a GRU also tackles the [Vanishing Gradient Problem](https://en.wikipedia.org/wiki/Vanishing_gradient_problem) that renders regular RNN's are not optimal for long sequences
+- In contrast to an LSTM a GRU requires less complex computation and might therefore perform better during the learning phase
+
+Resources
+
+- [Illustrated Guide to LSTM's and GRU's: A step by step explanation](https://www.youtube.com/watch?v=8HyCNIVRbSU)
 
 ##### Deep Q Network (DQN)
 
