@@ -73,8 +73,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="916.36849"
-     inkscape:cy="128.22209"
+     inkscape:cx="101.66008"
+     inkscape:cy="82.504411"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -99,7 +99,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -462,7 +462,7 @@
          sodipodi:role="line"
          x="358.57654"
          y="345.6637"
-         style="font-size:11px;line-height:1.25;font-family:sans-serif;stroke-width:0.5">LSTM Recurrent Neural Network</tspan></text>
+         style="font-size:11px;line-height:1.25;font-family:sans-serif;stroke-width:0.5">Gated Recurrent Unit</tspan></text>
     <circle
        r="9.4159126"
        cy="219.89035"
