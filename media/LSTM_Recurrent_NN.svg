@@ -57,8 +57,8 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="633.94153"
+     inkscape:zoom="1.979899"
+     inkscape:cx="832.86574"
      inkscape:cy="92.132835"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -84,7 +84,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -101,6 +101,39 @@
        x="1098.7104"
        y="217.73392"
        ry="24.496092" />
+    <rect
+       ry="9.2894945"
+       y="-1239.5883"
+       x="226.3123"
+       height="132.11815"
+       width="14.581204"
+       id="rect4793"
+       style="fill:#cccccc;fill-opacity:1;stroke:#808080;stroke-width:1.4990623;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.49906239, 1.49906239;stroke-dashoffset:0;stroke-opacity:1"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#cccccc;fill-opacity:1;stroke:#808080;stroke-width:1.49906242;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.49906245, 1.49906245;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4787"
+       width="22.157349"
+       height="62.512337"
+       x="1188.8162"
+       y="244.99823"
+       ry="4.3953686" />
+    <rect
+       ry="4.3953686"
+       y="244.99823"
+       x="1133.9867"
+       height="62.512337"
+       width="22.157349"
+       id="rect4781"
+       style="fill:#cccccc;fill-opacity:1;stroke:#808080;stroke-width:1.49906242;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.49906245, 1.49906245;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       style="fill:#cccccc;fill-opacity:1;stroke:#808080;stroke-width:1.49906242;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.49906244, 1.49906244;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4751"
+       width="22.157349"
+       height="62.512497"
+       x="1107.7367"
+       y="244.99806"
+       ry="4.39538" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
@@ -1646,5 +1679,49 @@
          d="m 1188.1845,333.60595 6.2736,6.27351"
          style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:2.74472308;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
+    <text
+       id="text4757"
+       y="326.91373"
+       x="1095.071"
+       style="font-style:normal;font-weight:normal;font-size:6px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5"
+       xml:space="preserve"><tspan
+         style="font-size:11px;line-height:1.25;font-family:sans-serif;stroke-width:0.5"
+         y="326.91373"
+         x="1095.071"
+         sodipodi:role="line"
+         id="tspan4755">forget</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5"
+       x="1135.0416"
+       y="326.91373"
+       id="text4785"><tspan
+         id="tspan4783"
+         sodipodi:role="line"
+         x="1135.0416"
+         y="326.91373"
+         style="font-size:11px;line-height:1.25;font-family:sans-serif;stroke-width:0.5">input</tspan></text>
+    <text
+       id="text4791"
+       y="326.91373"
+       x="1180.9882"
+       style="font-style:normal;font-weight:normal;font-size:6px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5"
+       xml:space="preserve"><tspan
+         style="font-size:11px;line-height:1.25;font-family:sans-serif;stroke-width:0.5"
+         y="326.91373"
+         x="1180.9882"
+         sodipodi:role="line"
+         id="tspan4789">output</tspan></text>
+    <text
+       id="text4797"
+       y="210.90402"
+       x="1149.8136"
+       style="font-style:normal;font-weight:normal;font-size:6px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.5"
+       xml:space="preserve"><tspan
+         style="font-size:11px;line-height:1.25;font-family:sans-serif;stroke-width:0.5"
+         y="210.90402"
+         x="1149.8136"
+         sodipodi:role="line"
+         id="tspan4795">cellstate</tspan></text>
   </g>
 </svg>
