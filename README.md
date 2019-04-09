@@ -76,18 +76,32 @@ Challenges
 
 Model-based learning
 
+> In model-based learning the agent exploits a _previously learned model_ to accomplish the task at hand
+([source](https://youtu.be/-YpalutQCKw?t=555))
+
 Model-free learning
+
+> In model-free learning the agent _relies on some trial-and-error experience_ for action selection
+([source](https://youtu.be/-YpalutQCKw?t=555))
 
 Value iteration
 
+- A value iteration algorithm keeps improving the value function at each iteration until the value-function converges
+
 Policy iteration
+
+- A policy iteration will re-define the policy at each step and compute the value according to this new policy until the policy converges
 
 Resources
 
 - [An introduction to Reinforcement Learning](https://www.youtube.com/watch?v=JgvyzIkgxF0)
 - [Overcoming sparse rewards in Deep RL: Curiosity, hindsight & auxiliary tasks](https://www.youtube.com/watch?v=0Ey02HT_1Ho)
 - [Introduction to Reinforcement Learning — Chapter 1](https://towardsdatascience.com/introduction-to-reinforcement-learning-chapter-1-fc8a196a09e8)
+- [Deep Reinforcement Learning Demystified (Episode 0)](https://medium.com/@m.alzantot/deep-reinforcement-learning-demystified-episode-0-2198c05a6124)
+- [Episode 1 — Genetic Algorithm for Reinforcement Learning](https://becominghuman.ai/genetic-algorithm-for-reinforcement-learning-a38a5612c4dc)
+- [Deep Reinforcement Learning Demysitifed (Episode 2) — Policy Iteration, Value Iteration and Q-learning](https://medium.com/@m.alzantot/deep-reinforcement-learning-demysitifed-episode-2-policy-iteration-value-iteration-and-q-978f9e89ddaa)
 - [Guest Post (Part I): Demystifying Deep Reinforcement Learning](https://www.intel.ai/demystifying-deep-reinforcement-learning/)
+- [Monte Carlo Prediction](https://www.youtube.com/watch?v=-YpalutQCKw)
 
 ## Problems
 
@@ -586,7 +600,7 @@ Resources
 - [Fehlermeldung "<tensor> is not an element of this graph." when loading model](https://github.com/keras-team/keras/issues/6462)
   - Assure the model is used in the same thread where it has been loaded
 
-## Social Impact
+## Social Impact of AI
 
 ### Reproducibility Crisis
 
@@ -604,11 +618,11 @@ Resources
 
 - [TensorFlow-Tutorials - Hvass-Labs](https://github.com/Hvass-Labs/TensorFlow-Tutorials)
 
-## Frameworks
+## Machine Learning Frameworks
 
-### Mechine Learning
+### General
 
--[scikit-learn](https://scikit-learn.org/)
+- [scikit-learn](https://scikit-learn.org/)
 
 ### Deep Learning
 
@@ -625,7 +639,7 @@ Recommendtations accoding to [Deep Learning Frameworks 2019](https://www.youtube
 |[CoreML](https://developer.apple.com/documentation/coreml)    |For iOS developers     |
 |[ONNX](https://onnx.ai/)                                      |For interoperability   |
 
-## Examples
+## Machine Learning Examples
 
 ### Demos
 
