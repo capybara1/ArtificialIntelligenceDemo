@@ -606,28 +606,34 @@ Resources
 
 ## Frameworks
 
+### Mechine Learning
+
+-[scikit-learn](https://scikit-learn.org/)
+
+### Deep Learning
+
 Recommendtations accoding to [Deep Learning Frameworks 2019](https://www.youtube.com/watch?v=SJldOOs4vB8):
 
-- Keras
-  - For Beginners
-- Pytorch or Sonnet
-  - For Research
-- Tensorflow
-  - For production on GCP
-- MXNET
-  - For production on AWS
-- CNTK
-  - For production on Azure
-- DL4J
-  - For Java developers
-- CoreML
-  - For iOS developers
-- ONNX
-  - For interoperability
+|Framework                                                     |Should be used by ...  |
+|--------------------------------------------------------------|-----------------------|
+|[Keras](https://keras.io/)                                    |For Beginners          |
+|[Pytorch](https://pytorch.org/), [Sonnet](https://sonnet.dev/)|For Research           |
+|[Tensorflow](http://tensorflow.org/)                          |For production on GCP  |
+|[MXNET](https://mxnet.apache.org/)                            |For production on AWS  |
+|[CNTK](https://docs.microsoft.com/en-us/cognitive-toolkit/)   |For production on Azure|
+|[DL4J](https://deeplearning4j.org/)                           |For Java developers    |
+|[CoreML](https://developer.apple.com/documentation/coreml)    |For iOS developers     |
+|[ONNX](https://onnx.ai/)                                      |For interoperability   |
 
 ## Examples
 
+### Demos
+
 - [AI Experiments](https://experiments.withgoogle.com/collection/ai)
 - [Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE)](https://nvlabs.github.io/SPADE/)
+- [Zu Ehren von Johann Sebastian Bach](https://www.google.com/doodles/celebrating-johann-sebastian-bach)
+
+### Interactive Playgrounds
+
 - [A Neural Network Playground](https://playground.tensorflow.org/)
 - [ConvnetJS demo: toy 2d classification with 2-layer neural network](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
