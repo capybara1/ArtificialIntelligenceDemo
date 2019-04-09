@@ -188,6 +188,15 @@ Overview
 - Hopfield Network
 - Radial Basis Function Network (RBFN)
 
+Resources
+
+- [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
+- [Deep Learning](http://www.deeplearningbook.org/)
+- [Neural Networks, Manifolds, and Topology](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)
+- [Neural Networks - 3Blue1Brown Series](https://www.youtube.com/playlist?&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
+- [Netzgespinste - Die Mathematik neuronaler Netze: einfache Mechanismen, komplexe Konstruktion](https://www.heise.de/select/ct/2016/06/1458191210995647)
+- [Machine Learning Recipes with Josh Gordon](https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
+
 #### Components
 
 ##### Activation
@@ -321,6 +330,7 @@ Background
 Challenges
 
 - [Vanishing Gradient Problem](https://en.wikipedia.org/wiki/Vanishing_gradient_problem)
+- [A Gentle Introduction to Exploding Gradients in Neural Networks](https://machinelearningmastery.com/exploding-gradients-in-neural-networks/)
 
 Resources
 
@@ -338,6 +348,7 @@ Resources
 
 - [Illustrated Guide to LSTM's and GRU's: A step by step explanation](https://www.youtube.com/watch?v=8HyCNIVRbSU)
 - [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+- [How to Develop Word-Based Neural Language Models in Python with Keras](https://machinelearningmastery.com/develop-word-based-neural-language-models-python-keras/)
 
 ##### Gated Recurrent Unit (GRU)
 
@@ -415,17 +426,7 @@ Resources
 Resources
 
 - [The Best 25 Datasets for Natural Language Processing](https://gengo.ai/datasets/the-best-25-datasets-for-natural-language-processing/)
-
-Resources:
-- [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
-- [Deep Learning](http://www.deeplearningbook.org/)
-- [Neural Networks, Manifolds, and Topology](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)
-- [Neural Networks - 3Blue1Brown Series](https://www.youtube.com/playlist?&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
-- [Netzgespinste - Die Mathematik neuronaler Netze: einfache Mechanismen, komplexe Konstruktion](https://www.heise.de/select/ct/2016/06/1458191210995647)
-- [Machine Learning Recipes with Josh Gordon](https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
-- [Fedora Linux, Chrome OS, KI-Fails | c't uplink 24.8](https://youtu.be/1ESqpc2jPiU?t=3398)
-- [A Neural Network Playground](https://playground.tensorflow.org/)
-- [ConvnetJS demo: toy 2d classification with 2-layer neural network](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
+- [Datasets - deeplearning.net](http://deeplearning.net/datasets/)
 
 #### Data Formats 
 
@@ -490,6 +491,7 @@ Options:
 
 Resources
 
+- [Framework for Better Deep Learning](https://machinelearningmastery.com/framework-for-better-deep-learning/)
 - [Hyper-Parameter Optimization](https://github.com/Hvass-Labs/TensorFlow-Tutorials/blob/master/19_Hyper-Parameters.ipynb)
 - [Hyperparameter Optimization - The Math of Intelligence #7](https://www.youtube.com/watch?v=ttE0F7fghfk)
 
@@ -594,6 +596,10 @@ Resources
 
 - [Automation, Ethics And Accountability Of AI Systems](https://www.forbes.com/sites/adigaskell/2018/04/18/automation-ethics-and-accountability-of-ai-systems/)
 
+### Fails
+
+- [Fedora Linux, Chrome OS, KI-Fails | c't uplink 24.8](https://youtu.be/1ESqpc2jPiU?t=3398)
+
 ## Tutorials
 
 - [TensorFlow-Tutorials - Hvass-Labs](https://github.com/Hvass-Labs/TensorFlow-Tutorials)
@@ -623,3 +629,5 @@ Recommendtations accoding to [Deep Learning Frameworks 2019](https://www.youtube
 
 - [AI Experiments](https://experiments.withgoogle.com/collection/ai)
 - [Semantic Image Synthesis with Spatially-Adaptive Normalization (SPADE)](https://nvlabs.github.io/SPADE/)
+- [A Neural Network Playground](https://playground.tensorflow.org/)
+- [ConvnetJS demo: toy 2d classification with 2-layer neural network](https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html)
